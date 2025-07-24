@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapporo - Hokkaido's Vibrant Capital City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation - Consistent with other pages -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">
+                    日本へようこそ
+                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="visit-japan.html" class="text-red-600 font-semibold flex items-center">
+                            Visit Japan
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Learn Japanese<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section for Sapporo -->
+        <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <img src="images/sapporo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/D1E7DD/006400?text=Sapporo+Hero';" alt="Sapporo city skyline" class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Sapporo: Hokkaido's Urban Gem</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Discover a vibrant city known for its beer, ramen, and the famous Snow Festival.</p>
+            </div>
+        </section>
+
+        <!-- Introduction to Sapporo -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Welcome to Sapporo</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">The largest city in Hokkaido, offering a perfect blend of urban excitement and natural beauty.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">Sapporo is the bustling capital of Hokkaido, renowned for its lively atmosphere, delicious cuisine, and the iconic Sapporo Snow Festival. Despite its urban sprawl, the city is surrounded by beautiful natural landscapes, making it a gateway to Hokkaido's wilderness.</p>
+                    <p>From exploring its vibrant entertainment districts to enjoying its famous beer and ramen, Sapporo offers a unique urban experience distinct from other major Japanese cities, with a relaxed pace and plenty of green spaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Attractions in Sapporo -->
+        <section id="sapporo-attractions" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Must-Visit Attractions</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Iconic landmarks and popular spots in Sapporo.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Attraction Card: Odori Park -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="images/odoripark.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C1DDC1/008000?text=Odori+Park';" alt="Odori Park" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Odori Park</h3>
+                            <p class="font-medium text-gray-600 mt-1">A beautiful urban park that hosts the famous Sapporo Snow Festival.</p>
+                        </div>
+                    </div>
+                    <!-- Attraction Card: Hokkaido Shrine -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="images/hokkaidoshrine.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/D1C1DD/800080?text=Hokkaido+Shrine';" alt="Hokkaido Shrine" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Hokkaido Shrine</h3>
+                            <p class="font-medium text-gray-600 mt-1">A significant Shinto shrine located in Maruyama Park.</p>
+                        </div>
+                    </div>
+                    <!-- Attraction Card: Susukino -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="images/susukino.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C1D1DD/0000FF?text=Susukino';" alt="Susukino entertainment district" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Susukino</h3>
+                            <p class="font-medium text-gray-600 mt-1">Sapporo's vibrant entertainment and nightlife district.</p>
+                        </div>
+                    </div>
+                    <!-- Add more attractions as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do in Sapporo Section -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Experiences in Sapporo</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Immerse yourself in Sapporo's unique culture and activities.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-red-100 text-red-600 rounded-full mb-4"><i data-lucide="ramen" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Savor Sapporo Ramen</h3>
+                        <p class="text-gray-600">Indulge in the city's famous miso ramen, a must-try culinary experience.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-blue-100 text-blue-600 rounded-full mb-4"><i data-lucide="snow-capped-mountain" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Winter Wonderland</h3>
+                        <p class="text-gray-600">Visit during the Snow Festival or enjoy nearby ski resorts.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-green-100 text-green-600 rounded-full mb-4"><i data-lucide="factory" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Factory Tours & Tastings</h3>
+                        <p class="text-gray-600">Explore the Shiroi Koibito Park (cookie factory) or Sapporo Beer Museum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Consistent with other pages -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile menu script (if implemented)
+    </script>
+</body>
+</html>
