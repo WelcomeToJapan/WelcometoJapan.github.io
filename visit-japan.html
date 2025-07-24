@@ -4,32 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Japan - The Ultimate Guide to Your Dream Trip</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .dropdown-menu {
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-        /* Removed .destination-card styles */
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Header & Navigation (Consistent with Homepage) -->
     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <!-- Consistent Header from Homepage -->
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="text-2xl font-bold text-red-600">
@@ -39,66 +27,47 @@
                 <div class="hidden lg:flex items-center space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
                     <div class="relative group">
-                        <button class="text-red-600 font-semibold flex items-center">
+                        <a href="visit-japan.html" class="text-red-600 font-semibold flex items-center">
                             Visit Japan
                             <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible z-10">
-                            <!-- Dropdown Content from Homepage -->
-                            <div class="p-2">
-                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
-                                <a href="#" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
                                 <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
-                                <a href="#" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">Itineraries & Budgets</a>
-                                <a href="#" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">Transportation</a>
-                                <a href="#" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">Accommodation</a>
-                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Experiences & Culture</a>
-                                <a href="#" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">Food, Onsen, Festivals</a>
                             </div>
                         </div>
                     </div>
                     <div class="relative group">
-                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">
-                            Learn Japanese
-                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                        </button>
-                        <!-- Dropdown Content -->
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Learn Japanese<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
                     </div>
                     <div class="relative group">
-                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">
-                            Live in Japan
-                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                        </button>
-                        <!-- Dropdown Content -->
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
                     </div>
                     <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
                     <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
                 </div>
                 <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
                 </div>
             </div>
-            <!-- Mobile Menu (Same as homepage) -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
             <div class="absolute inset-0 bg-black opacity-40"></div>
-            <img src="images/japan3.jpg" 
-                 onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Image+Not+Found';"
-                 alt="A beautiful landscape in Japan" 
-                 class="w-full h-full object-cover">
+            <img src="images/japan3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Image+Not+Found';" alt="A beautiful landscape in Japan" class="w-full h-full object-cover">
             <div class="relative z-10 px-6">
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Your Adventure Starts Here.</h1>
                 <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">From ancient temples to futuristic cities, discover everything you need to know to plan your unforgettable trip to Japan.</p>
             </div>
         </section>
 
-        <!-- Destinations Grid -->
         <section id="destinations" class="py-16 sm:py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -106,134 +75,94 @@
                     <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Click on a region to discover its unique charm, top attractions, and hidden gems.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <!-- Card: Kanto (Tokyo) -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="kanto.html" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/japan4cityview.jpg" alt="Kanto Region" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Kanto Region</h3>
-                            <p class="font-medium text-gray-600">The vibrant heart of Japan, featuring Tokyo.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Kanto Region</h3>
+                            <p class="font-medium text-gray-600 mt-1">The vibrant heart of Japan, featuring Tokyo.</p>
                         </div>
                     </a>
-                    <!-- Card: Hokkaido -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/hokkaido.jpg" alt="Hokkaido" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Hokkaido</h3>
-                            <p class="font-medium text-gray-600">Wild nature, snowy winters, and delicious food.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Hokkaido</h3>
+                            <p class="font-medium text-gray-600 mt-1">Wild nature, snowy winters, and delicious food.</p>
                         </div>
                     </a>
-                    <!-- Card: Kyoto -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <!-- ... other region cards ... -->
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/kyoto.jpg" alt="Kyoto" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Kyoto</h3>
-                            <p class="font-medium text-gray-600">The cultural soul of Japan, with temples and geishas.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Kyoto</h3>
+                            <p class="font-medium text-gray-600 mt-1">The cultural soul of Japan, with temples and geishas.</p>
                         </div>
                     </a>
-                    <!-- Card: Osaka -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/osaka.jpg" alt="Osaka" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Osaka</h3>
-                            <p class="font-medium text-gray-600">A food lover's paradise with electric nightlife.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Osaka</h3>
+                            <p class="font-medium text-gray-600 mt-1">A food lover's paradise with electric nightlife.</p>
                         </div>
                     </a>
-                    <!-- Card: Hiroshima -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/hiroshima.jpg" alt="Hiroshima" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Hiroshima</h3>
-                            <p class="font-medium text-gray-600">A symbol of peace, history, and resilience.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Hiroshima</h3>
+                            <p class="font-medium text-gray-600 mt-1">A symbol of peace, history, and resilience.</p>
                         </div>
                     </a>
-                    <!-- Card: Japanese Alps -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/japanalps.jpg" alt="Japanese Alps" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Japanese Alps</h3>
-                            <p class="font-medium text-gray-600">Stunning mountain scenery and outdoor adventures.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Japanese Alps</h3>
+                            <p class="font-medium text-gray-600 mt-1">Stunning mountain scenery and outdoor adventures.</p>
                         </div>
                     </a>
-                    <!-- Card: Kyushu -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/kyushu.jpg" alt="Kyushu" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Kyushu</h3>
-                            <p class="font-medium text-gray-600">Volcanic landscapes, hot springs, and rich history.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Kyushu</h3>
+                            <p class="font-medium text-gray-600 mt-1">Volcanic landscapes, hot springs, and rich history.</p>
                         </div>
                     </a>
-                    <!-- Card: Okinawa -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/okinawa.jpg" alt="Okinawa" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Okinawa</h3>
-                            <p class="font-medium text-gray-600">Subtropical paradise with beautiful beaches.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Okinawa</h3>
+                            <p class="font-medium text-gray-600 mt-1">Subtropical paradise with beautiful beaches.</p>
                         </div>
                     </a>
-                    <!-- Card: Nagoya -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/nagoya.jpg" alt="Nagoya" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Nagoya</h3>
-                            <p class="font-medium text-gray-600">A hub of industry, history, and unique cuisine.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Nagoya</h3>
+                            <p class="font-medium text-gray-600 mt-1">A hub of industry, history, and unique cuisine.</p>
                         </div>
                     </a>
-                    <!-- Card: Shikoku -->
-                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+                    <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <img src="images/shikoku.jpg" alt="Shikoku" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-900">Shikoku</h3>
-                            <p class="font-medium text-gray-600">Home of the 88-temple pilgrimage and serene nature.</p>
+                            <h3 class="text-xl font-bold text-gray-900">Shikoku</h3>
+                            <p class="font-medium text-gray-600 mt-1">Home of the 88-temple pilgrimage and serene nature.</p>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Plan Your Trip Section -->
         <section class="py-16 sm:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Everything You Need to Plan</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <!-- Column 1: Itineraries -->
-                    <div>
-                        <div class="inline-block p-4 bg-red-100 text-red-600 rounded-full mb-4">
-                            <i data-lucide="map" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Itineraries</h3>
-                        <p class="text-gray-600">Browse our expert-crafted itineraries, from 7-day highlights to 3-week deep dives.</p>
-                        <a href="#" class="font-semibold text-red-600 hover:text-red-800 mt-4 inline-block">See Itineraries &rarr;</a>
-                    </div>
-                    <!-- Column 2: Transportation -->
-                    <div>
-                        <div class="inline-block p-4 bg-red-100 text-red-600 rounded-full mb-4">
-                            <i data-lucide="train-track" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Transportation</h3>
-                        <p class="text-gray-600">Master Japan's world-class transport. Learn about the JR Pass, local transit, and more.</p>
-                        <a href="#" class="font-semibold text-red-600 hover:text-red-800 mt-4 inline-block">Get Around &rarr;</a>
-                    </div>
-                    <!-- Column 3: Accommodation -->
-                    <div>
-                        <div class="inline-block p-4 bg-red-100 text-red-600 rounded-full mb-4">
-                            <i data-lucide="bed-double" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Accommodation</h3>
-                        <p class="text-gray-600">Find the perfect place to stay, from luxury hotels to traditional ryokans.</p>
-                        <a href="#" class="font-semibold text-red-600 hover:text-red-800 mt-4 inline-block">Find Stays &rarr;</a>
-                        <p class="text-xs text-gray-500 mt-2">(Booking via our links is a great way to support our site!)</p>
-                    </div>
+                    <!-- Planning columns -->
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer (Consistent with Homepage) -->
     <footer class="bg-gray-800 text-white">
-        <!-- Footer Content from Homepage -->
         <div class="container mx-auto px-6 py-12">
             <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
                 <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
@@ -242,7 +171,6 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
     </script>
 </body>
