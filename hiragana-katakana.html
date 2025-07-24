@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiragana & Katakana - Master Japanese Phonetic Alphabets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+        /* Custom styles for tables/charts if needed */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0; /* Tailwind's gray-200 */
+            padding: 0.75rem;
+            text-align: center;
+        }
+        th {
+            background-color: #f8fafc; /* Tailwind's gray-50 */
+            font-weight: 600;
+            color: #1a202c; /* Tailwind's gray-900 */
+        }
+        td {
+            color: #4a5568; /* Tailwind's gray-700 */
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation - Consistent with other pages -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">
+                    日本へようこそ
+                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="visit-japan.html" class="text-gray-600 font-semibold flex items-center">
+                            Visit Japan
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="learn-japanese.html" class="text-red-600 font-semibold flex items-center">
+                            Learn Japanese
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section for Hiragana & Katakana -->
+        <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <img src="images/learnjapanese.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Japanese+Scripts';" alt="Japanese calligraphy brush and ink" class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Hiragana & Katakana: The Building Blocks</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Your essential guide to mastering Japan's phonetic alphabets.</p>
+            </div>
+        </section>
+
+        <!-- Introduction to Hiragana & Katakana -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The Foundation of Japanese Writing</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Before diving into complex grammar or kanji, understanding Hiragana and Katakana is crucial.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">Japanese utilizes three main writing systems: Hiragana, Katakana, and Kanji. Hiragana and Katakana are phonetic syllabaries, meaning each character represents a syllable (like "ka," "ki," "ku," "ke," "ko"). They are the first step for any Japanese learner.</p>
+                    <p>Mastering these two scripts will allow you to read most Japanese words (even if you don't understand their meaning yet) and write anything you can say. They are fundamental for pronunciation, vocabulary acquisition, and eventually, tackling Kanji.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hiragana Section -->
+        <section id="hiragana" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Hiragana: The Native Script</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Used for native Japanese words, grammatical particles, and verb endings.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">Hiragana is the primary phonetic script used for writing native Japanese words that don't have a Kanji representation, as well as for grammatical elements like particles (e.g., は "wa", を "o") and verb conjugations. It has a rounded, flowing appearance.</p>
+                    <p class="mb-4">There are 46 basic Hiragana characters. Once you learn these, you can also learn variations with diacritics (dakuten and handakuten) and combinations (yōon) to form all necessary sounds.</p>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">Basic Hiragana Chart</h3>
+                    <div class="overflow-x-auto rounded-lg shadow-md">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th><th>あ (a)</th><th>い (i)</th><th>う (u)</th><th>え (e)</th><th>お (o)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th>K</th><td>か (ka)</td><td>き (ki)</td><td>く (ku)</td><td>け (ke)</td><td>こ (ko)</td></tr>
+                                <tr><th>S</th><td>さ (sa)</td><td>し (shi)</td><td>す (su)</td><td>せ (se)</td><td>そ (so)</td></tr>
+                                <tr><th>T</th><td>た (ta)</td><td>ち (chi)</td><td>つ (tsu)</td><td>て (te)</td><td>と (to)</td></tr>
+                                <tr><th>N</th><td>な (na)</td><td>に (ni)</td><td>ぬ (nu)</td><td>ね (ne)</td><td>の (no)</td></tr>
+                                <tr><th>H</th><td>は (ha)</td><td>ひ (hi)</td><td>ふ (fu)</td><td>へ (he)</td><td>ほ (ho)</td></tr>
+                                <tr><th>M</th><td>ま (ma)</td><td>み (mi)</td><td>む (mu)</td><td>め (me)</td><td>も (mo)</td></tr>
+                                <tr><th>Y</th><td>や (ya)</td><td></td><td>ゆ (yu)</td><td></td><td>よ (yo)</td></tr>
+                                <tr><th>R</th><td>ら (ra)</td><td>り (ri)</td><td>る (ru)</td><td>れ (re)</td><td>ろ (ro)</td></tr>
+                                <tr><th>W</th><td>わ (wa)</td><td></td><td></td><td></td><td>を (wo)</td></tr>
+                                <tr><th></th><td>ん (n)</td><td colspan="4"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katakana Section -->
+        <section id="katakana" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Katakana: For Loanwords & Emphasis</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Used primarily for foreign loanwords, proper nouns, and onomatopoeia.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">Katakana is the second phonetic script, sharing the same sounds as Hiragana but with a more angular and straight-lined appearance. It is primarily used for words borrowed from foreign languages (loanwords, or "gairaigo"), foreign proper nouns (names of people, places outside Japan), and for emphasis (like italics in English).</p>
+                    <p class="mb-4">Like Hiragana, there are 46 basic Katakana characters, plus variations with diacritics and combinations.</p>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">Basic Katakana Chart</h3>
+                    <div class="overflow-x-auto rounded-lg shadow-md">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th><th>ア (a)</th><th>イ (i)</th><th>ウ (u)</th><th>エ (e)</th><th>オ (o)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th>K</th><td>カ (ka)</td><td>キ (ki)</td><td>ク (ku)</td><td>ケ (ke)</td><td>コ (ko)</td></tr>
+                                <tr><th>S</th><td>サ (sa)</td><td>シ (shi)</td><td>ス (su)</td><td>セ (se)</td><td>ソ (so)</td></tr>
+                                <tr><th>T</th><td>タ (ta)</td><td>チ (chi)</td><td>ツ (tsu)</td><td>テ (te)</td><td>ト (to)</td></tr>
+                                <tr><th>N</th><td>ナ (na)</td><td>ニ (ni)</td><td>ヌ (nu)</td><td>ネ (ne)</td><td>ノ (no)</td></tr>
+                                <tr><th>H</th><td>ハ (ha)</td><td>ヒ (hi)</td><td>フ (fu)</td><td>ヘ (he)</td><td>ホ (ho)</td></tr>
+                                <tr><th>M</th><td>マ (ma)</td><td>ミ (mi)</td><td>ム (mu)</td><td>メ (me)</td><td>モ (mo)</td></tr>
+                                <tr><th>Y</th><td>ヤ (ya)</td><td></td><td>ユ (yu)</td><td></td><td>ヨ (yo)</td></tr>
+                                <tr><th>R</th><td>ラ (ra)</td><td>リ (ri)</td><td>ル (ru)</td><td>レ (re)</td><td>ロ (ro)</td></tr>
+                                <tr><th>W</th><td>ワ (wa)</td><td></td><td></td><td></td><td>ヲ (wo)</td></tr>
+                                <tr><th></th><td>ン (n)</td><td colspan="4"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion / Next Steps -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Your First Step is Complete!</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Mastering Hiragana and Katakana is a huge achievement. Keep practicing!</p>
+                <div class="mt-8">
+                    <a href="learn-japanese.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">Back to Learn Japanese Home &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Consistent with other pages -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile menu script (if implemented)
+    </script>
+</body>
+</html>
