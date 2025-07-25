@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji Introduction - Your First Steps with Japanese Characters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0; /* Tailwind's gray-200 */
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc; /* Tailwind's gray-50 */
+            font-weight: 600;
+            color: #1a202c; /* Tailwind's gray-900 */
+        }
+        td {
+            color: #4a5568; /* Tailwind's gray-700 */
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation - Consistent with other pages -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">
+                    日本へようこそ
+                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="visit-japan.html" class="text-gray-600 hover:text-red-600 transition-colors flex items-center">
+                            Visit Japan
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="learn-japanese.html" class="text-red-600 font-semibold flex items-center">
+                            Learn Japanese
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section for Kanji Introduction -->
+        <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <img src="images/learnjapanese.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Japanese+Kanji';" alt="Japanese kanji characters on a scroll" class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Kanji: The Key to Japanese Mastery</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Though daunting at first, Kanji are extremely helpful and can rapidly improve your comprehension.</p>
+            </div>
+        </section>
+
+        <!-- Introduction to Kanji -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Unlocking Deeper Meaning with Kanji</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Kanji are Chinese characters adopted into the Japanese writing system, representing concepts or ideas.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">After mastering Hiragana and Katakana, Kanji is the next step in becoming truly literate in Japanese. Each Kanji character carries its own meaning and can have multiple readings depending on context and combination with other characters.</p>
+                    <p>While learning thousands of Kanji can seem daunting, starting with common ones and understanding their components (radicals) can make the process more manageable and rewarding. Kanji helps to differentiate homophones and makes written Japanese more concise and easier to read.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Aspects of Kanji -->
+        <section id="kanji-aspects" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Key Aspects of Kanji</h2>
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mt-8 mb-4">1. Readings: On'yomi and Kun'yomi</h3>
+                    <p class="mb-4">Kanji typically have two types of readings:</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 text-gray-700">
+                        <li><strong>On'yomi (音読み):</strong> Chinese-derived readings, often used when Kanji are combined with other Kanji (e.g., 日本 - にほん "Nihon" - Japan).</li>
+                        <li><strong>Kun'yomi (訓読み):</strong> Native Japanese readings, often used when Kanji stand alone or are followed by Hiragana (e.g., 食べる - たべる "taberu" - to eat).</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">2. Stroke Order</h3>
+                    <p class="mb-4">Writing Kanji correctly involves following a specific stroke order. This is important not just for aesthetics, but also for memorization and recognition. Consistent stroke order also helps with faster and more legible writing.</p>
+                    <p class="mb-4">General rules include writing from top to bottom, left to right, and horizontal strokes before vertical ones.</p>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">3. Radicals (部首 - Bushu)</h3>
+                    <p class="mb-4">Kanji are often composed of smaller components called radicals. Understanding common radicals can help you guess the meaning or categorize a Kanji, even if you don't know the full character.</p>
+                    <div class="overflow-x-auto rounded-lg shadow-md mb-8">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Radical</th>
+                                    <th>Meaning</th>
+                                    <th>Example Kanji</th>
+                                    <th>Example Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>人 (ひと)</td><td>Person</td><td>休</td><td>Rest (person + tree)</td></tr>
+                                <tr><td>水 (みず)</td><td>Water</td><td>海</td><td>Sea (water + every)</td></tr>
+                                <tr><td>手 (て)</td><td>Hand</td><td>持</td><td>Hold (hand + temple)</td></tr>
+                                <tr><td>口 (くち)</td><td>Mouth</td><td>聞</td><td>Hear (gate + ear)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">4. Common Basic Kanji</h3>
+                    <p class="mb-4">Here are a few very common and useful Kanji to get you started:</p>
+                    <div class="overflow-x-auto rounded-lg shadow-md mb-8">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kanji</th>
+                                    <th>On'yomi</th>
+                                    <th>Kun'yomi</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>日</td><td>ニチ, ジツ</td><td>ひ, -び, -か</td><td>Day, Sun</td></tr>
+                                <tr><td>本</td><td>ホン</td><td>もと</td><td>Book, Origin</td></tr>
+                                <tr><td>人</td><td>ジン, ニン</td><td>ひと</td><td>Person</td></tr>
+                                <tr><td>大</td><td>ダイ, タイ</td><td>おお-きい</td><td>Big, Large</td></tr>
+                                <tr><td>学</td><td>ガク</td><td>まな-ぶ</td><td>Study, Learn</td></tr>
+                                <tr><td>語</td><td>ゴ</td><td>かた-る</td><td>Language, Word</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion / Next Steps -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">A Journey of a Thousand Characters Begins with a Single Stroke!</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Don't be intimidated by Kanji; approach it step by step, and you'll make great progress.</p>
+                <div class="mt-8">
+                    <a href="learn-japanese.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">Back to Learn Japanese Home &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Consistent with other pages -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile menu script (if implemented)
+    </script>
+</body>
+</html>
