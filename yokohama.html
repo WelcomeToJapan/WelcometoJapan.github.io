@@ -16,47 +16,8 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Header & Navigation - Consistent with other pages -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-red-600">
-                    日本へようこそ
-                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
-                </a>
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
-                    <div class="relative group">
-                        <a href="visit-japan.html" class="text-red-600 font-semibold flex items-center">
-                            Visit Japan
-                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                        </a>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
-                           <div class="p-2">
-                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
-                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
-                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Learn Japanese<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
-                    </div>
-                    <div class="relative group">
-                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
-                    </div>
-                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
-                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
-                </div>
-                <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
-                </div>
-            </div>
-            <div id="mobile-menu" class="hidden lg:hidden mt-4">
-                <!-- Mobile nav links -->
-            </div>
-        </nav>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <main>
         <!-- Hero Section for Yokohama -->
@@ -158,8 +119,28 @@
     </footer>
 
     <script>
+        // JavaScript to load the header
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    // Re-initialize Lucide icons after content is loaded
+                    lucide.createIcons();
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+
+        // Initialize Lucide icons for static content (if any)
+        // Note: lucide.createIcons() is called again after header load to ensure new icons are rendered.
         lucide.createIcons();
-        // Mobile menu script (if implemented)
     </script>
 </body>
 </html>
