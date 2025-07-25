@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fukushima: More Than Just 3.11 - Welcome to Japan Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+    </style>
+    <!-- Affiliate Tracking/Ownership Confirmation Script -->
+    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+        (function () {
+            var script = document.createElement("script");
+            script.async = 1;
+            script.src = 'https://emrldtp.com/NDQyMDM2.js?t=442036';
+            document.head.appendChild(script);
+        })();
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <article class="container mx-auto px-6 py-16 sm:py-24">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">Fukushima: More Than Just 3.11</h1>
+                <p class="text-lg text-gray-600">By Welcome to Japan Team | July 25, 2025 | <span class="font-semibold text-blue-600">Local Insights</span></p>
+            </header>
+
+            <figure class="mb-12 rounded-lg overflow-hidden shadow-xl">
+                <img src="https://placehold.co/1200x600/6B7280/FFFFFF?text=Fukushima+Landscape" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/6B7280/FFFFFF?text=Fukushima+Landscape';" alt="Scenic landscape in Fukushima Prefecture" class="w-full h-auto object-cover">
+                <figcaption class="text-center text-gray-500 text-sm mt-2">Discovering the hidden beauty and rich experiences of Fukushima.</figcaption>
+            </figure>
+
+            <div class="prose prose-lg mx-auto text-gray-700 leading-relaxed">
+                <p class="mb-6">When people hear "Fukushima," they often think of the 2011 disaster, widely referred to as 3.11 in Japan. But there's so much more to this prefecture than that. After living here for 14 years, I can tell you it's a place brimming with all the delicious food Japan has to offer, stunning landscapes, and adventures off the beaten track.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">A Foodie's Delight</h2>
+                <p class="mb-6">Let's start with the food. Japan is a foodie's paradise, and that goes for Fukushima too. While 'meibutsu' like Kitakata ramen are worth a try, it's better to think of it in terms of standard Japanese excellence, but without the crowds or busyness of touristy areas. Oh, and the sake here is top-notch.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Winter Sports Paradise</h2>
+                <p class="mb-6">Now, if you're into winter sports, this place is fantastic. Fukushima, especially around Mount Bandai, has some great ski resorts - I snowboard of course, and its even better for that, but the skiiers seem to be having a good time. Think tons of fresh powder and hardly any crowds – it's amazing. Hell, some of the resorts are even FREE - Inawashiro ski resort is, and it's huge. Way better than the crowds and lines of Niseko and Nagano, where I have also snowboarded many times.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Sightseeing & Nature</h2>
+                <p class="mb-6">For sightseeing, Aizuwakamatsu is probably the first place to visit. It's got Tsuruga Castle, the traditional Ouchijuku village, and history by the bucket. And if you love nature, Bandai, the Bandai skyline, the Goshikinuma lakes... basically drive anywhere and find stunning mountain views.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Getting Around</h2>
+                <p class="mb-6">And yes, getting around is easiest with a car. It makes all the small temples, onsens, parks, restaurants, and hotels easy to reach. And by renting a car, you can save on accomodation. Hotels away from the stations are always cheaper, and you can find love hotels just outside the cities – they're basically drive-in motels and super convenient. More importantly though, the best traditional, warm, and "Japanese" inns are best found by car.</p>
+
+                <p class="mb-6">Fukushima is beautiful, as is all of Tohoku. So venture away from the tourist trail and explore!</p>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="blog.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">Back to All Blog Posts &rarr;</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer - Consistent with other pages -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to your shared JavaScript file -->
+    <script src="main.js"></script>
+    <script>
+        // JavaScript to load the header AND handle mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    
+                    // Re-initialize Lucide icons after content is loaded
+                    lucide.createIcons();
+
+                    // Call the function from main.js to initialize the mobile menu
+                    initializeMobileMenu(); 
+
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+
+        // Initialize Lucide icons for static content (if any)
+        // Note: lucide.createIcons() is called again after header load to ensure new icons are rendered.
+        lucide.createIcons();
+    </script>
+</body>
+</html>
