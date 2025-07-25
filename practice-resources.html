@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Practice & Resources - Tools for Fluency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+        .affiliate-disclosure {
+            font-size: 0.875rem; /* text-sm */
+            color: #4a5568; /* Tailwind's gray-700 */
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: #f7fafc; /* Tailwind's gray-100 */
+            border-left: 4px solid #f6ad55; /* Tailwind's orange-400 */
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation - Consistent with other pages -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">
+                    日本へようこそ
+                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="visit-japan.html" class="text-gray-600 hover:text-red-600 transition-colors flex items-center">
+                            Visit Japan
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="learn-japanese.html" class="text-red-600 font-semibold flex items-center">
+                            Learn Japanese
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section for Practice & Resources -->
+        <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <img src="images/learnjapanese.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/666666?text=Japanese+Practice';" alt="Person studying Japanese with notebook and tablet" class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Practice & Resources: Accelerate Your Learning</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Discover effective methods and top tools to practice and master Japanese.</p>
+            </div>
+        </section>
+
+        <!-- Introduction to Practice & Resources -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Beyond the Basics: Consistent Practice</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Regular engagement with the language is key to moving from understanding to fluency.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                    <p class="mb-4">Learning a language isn't just about memorizing characters and grammar rules; it's about consistent practice and immersion. This section provides a curated list of popular and effective resources, tools, and methods to help you integrate Japanese into your daily life and accelerate your learning.</p>
+                    <p>Whether you prefer apps, textbooks, online communities, or real-life interaction, there's a method here for you. Remember, the best way to learn is to find what works for you and stick with it!</p>
+                    <div class="affiliate-disclosure mt-6">
+                        <p class="font-semibold mb-2">Affiliate Disclosure:</p>
+                        <p>Some links on this page may be affiliate links. This means if you click on the link and make a purchase, we may receive a small commission at no extra cost to you. This helps support our site and allows us to continue providing valuable content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Apps & Websites -->
+        <section id="apps-websites" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Recommended Apps & Websites</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Duolingo / Memrise</h3>
+                        <p class="text-gray-600 mb-4">Great for beginners to learn basic vocabulary and grammar through gamified lessons. (Free with premium options)</p>
+                        <a href="YOUR_DUOLINGO_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Learn More &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Anki (Spaced Repetition Flashcards)</h3>
+                        <p class="text-gray-600 mb-4">Highly effective for memorizing vocabulary and Kanji using spaced repetition. (Free for desktop, paid for mobile)</p>
+                        <a href="YOUR_ANKI_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Learn More &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Tandem / HelloTalk (Language Exchange)</h3>
+                        <p class="text-gray-600 mb-4">Connect with native Japanese speakers for free language exchange and conversation practice.</p>
+                        <a href="YOUR_TANDEM_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Learn More &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">TextFugu / WaniKani (Kanji & Grammar)</h3>
+                        <p class="text-gray-600 mb-4">Structured online courses for comprehensive Kanji and grammar learning. (Subscription-based)</p>
+                        <a href="YOUR_WANIKANI_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Textbooks & Study Guides -->
+        <section id="textbooks" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Essential Textbooks & Study Guides</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Genki I & II</h3>
+                        <p class="text-gray-600 mb-4">Widely popular textbooks for beginners, focusing on practical communication and balanced skills.</p>
+                        <a href="YOUR_GENKI_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Find on Amazon &rarr;</a>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">Minna no Nihongo</h3>
+                        <p class="text-gray-600 mb-4">Another highly regarded series, often used in Japanese language schools, with a strong focus on grammar and formal Japanese.</p>
+                        <a href="YOUR_MINNANO_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:text-blue-800 font-semibold">Find on Amazon &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Methods & Tips -->
+        <section id="practice-methods" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center mb-8">Effective Practice Methods</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-red-100 text-red-600 rounded-full mb-4"><i data-lucide="mic" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Speak Aloud</h3>
+                        <p class="text-gray-600">Practice speaking even if it's just to yourself. Read dialogues aloud, describe objects around you.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-blue-100 text-blue-600 rounded-full mb-4"><i data-lucide="ear" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Listen Actively</h3>
+                        <p class="text-gray-600">Watch Japanese dramas, anime, news, or podcasts. Try to catch familiar words and phrases.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-green-100 text-green-600 rounded-full mb-4"><i data-lucide="pen-tool" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Write Regularly</h3>
+                        <p class="text-gray-600">Keep a simple Japanese journal, write short sentences, or practice Hiragana/Katakana daily.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-purple-100 text-purple-600 rounded-full mb-4"><i data-lucide="users" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Find a Study Partner</h3>
+                        <p class="text-gray-600">Practice with a friend or a language exchange partner to build confidence.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-yellow-100 text-yellow-600 rounded-full mb-4"><i data-lucide="film" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Consume Japanese Media</h3>
+                        <p class="text-gray-600">Read simple manga, watch movies with subtitles, or play Japanese video games.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="inline-block p-3 bg-pink-100 text-pink-600 rounded-full mb-4"><i data-lucide="lightbulb" class="w-8 h-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Set Realistic Goals</h3>
+                        <p class="text-gray-600">Focus on small, achievable goals to maintain motivation and track progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion / Next Steps -->
+        <section class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Consistency is Key!</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Make Japanese a part of your daily routine, and you'll see amazing progress.</p>
+                <div class="mt-8">
+                    <a href="learn-japanese.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">Back to Learn Japanese Home &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Consistent with other pages -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile menu script (if implemented)
+    </script>
+</body>
+</html>
