@@ -59,8 +59,36 @@
                 <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden mt-4">
-            <!-- Mobile nav links -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-white rounded-lg shadow-xl py-2">
+            <!-- Mobile nav links will be dynamically added here by JS -->
+            <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md">Home</a>
+            <a href="visit-japan.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md">Visit Japan</a>
+            <a href="learn-japanese.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md">Learn Japanese</a>
+            <a href="work-visas.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md ml-4">Work Visas</a>
+            <a href="student-visas.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md ml-4">Student Visas</a>
+            <a href="housing.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md ml-4">Housing</a>
+            <a href="healthcare.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md ml-4">Healthcare</a>
+            <a href="banking.html" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md ml-4">Banking</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md">Blog</a>
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-red-50 hover:text-red-600 rounded-md">About</a>
         </div>
     </nav>
 </header>
+
+<script>
+    // This script is part of header.html and will be loaded by each page.
+    // It handles the mobile menu toggle.
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+
+    // Note: The lucide.createIcons() call is handled by the main page's DOMContentLoaded listener
+    // after the header HTML is fetched and inserted.
+</script>
