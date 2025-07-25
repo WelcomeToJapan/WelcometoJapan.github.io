@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Itineraries: Perfect Plans for Your Dream Trip</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .dropdown-menu {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation (Updated) -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">
+                    日本へようこそ
+                    <span class="text-xl font-semibold text-gray-700 ml-2 hidden sm:inline">Welcome to Japan</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-red-600 transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="visit-japan.html" class="text-gray-600 hover:text-red-600 transition-colors flex items-center">
+                            Visit Japan
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 invisible group-hover:visible pt-2 z-10">
+                           <div class="p-2">
+                                <a href="visit-japan.html#destinations" class="font-bold text-sm text-gray-800 block px-4 py-2">Destinations</a>
+                                <a href="kanto.html" class="text-sm text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-md block px-4 py-2 ml-2">By Region (Tokyo, Kyoto...)</a>
+                                <a href="#" class="font-bold text-sm text-gray-800 block px-4 py-2 mt-2">Plan Your Trip</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="learn-japanese.html" class="text-red-600 font-semibold flex items-center">
+                            Learn Japanese
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-red-600 transition-colors flex items-center">Live in Japan<i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i></button>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Blog</a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">About</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-red-600 focus:outline-none"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden mt-4">
+                <!-- Mobile nav links -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[45vh] min-h-[300px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <img src="images/japanitin.jpg" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1600x600/cccccc/666666?text=Image+Not+Found';"
+                 alt="A collage of Japanese travel scenes" 
+                 class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">Find Your Perfect Japan Itinerary</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Our expertly crafted itineraries are the perfect starting point for your journey.</p>
+            </div>
+        </section>
+
+        <!-- Intro and Quick Links -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Welcome to our itinerary guide! Planning a trip to Japan can feel overwhelming, but it doesn't have to be. We've designed these sample itineraries to serve as a launchpad for your adventure. Use them as they are, or mix and match days to create a custom trip that's perfect for you. Below, you'll find plans for various trip lengths and themes.
+                </p>
+                <div class="mt-6 text-center">
+                    <span class="font-semibold">Jump to:</span>
+                    <a href="#7-day" class="text-red-600 hover:underline mx-2">7-Day Classic</a> |
+                    <a href="#14-day" class="text-red-600 hover:underline mx-2">14-Day Golden Route</a> |
+                    <a href="#10-day" class="text-red-600 hover:underline mx-2">10-Day Pop Culture</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itineraries Section -->
+        <section class="py-16 sm:py-20">
+            <div class="container mx-auto px-6 space-y-16">
+
+                <!-- Itinerary 1: 7-Day Classic -->
+                <article id="7-day" class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <img src="https://placehold.co/600x800/E9D5FF/5B21B6?text=Tokyo+&+Kyoto" class="rounded-lg object-cover w-full h-full" alt="Tokyo and Kyoto">
+                        </div>
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold mb-2">The 7-Day First-Timer's Classic</h2>
+                            <p class="text-gray-600 mb-1"><span class="font-semibold">Focus:</span> Tokyo & Kyoto</p>
+                            <p class="text-gray-600 mb-4"><span class="font-semibold">Best for:</span> Seeing the essential highlights on a tight schedule.</p>
+                            <div class="space-y-4 text-gray-700">
+                                <p><strong>Day 1-3: Tokyo.</strong> Dive into the world's biggest metropolis. Explore the neon lights of Shinjuku, the famous Shibuya Crossing, and the traditional charm of Asakusa's Senso-ji Temple. <a href="#" class="text-red-600 font-semibold">Book a hotel in Shinjuku &rarr;</a></p>
+                                <p><strong>Day 4: Travel to Kyoto.</strong> Experience the speed and efficiency of the Shinkansen (bullet train). <a href="#" class="text-red-600 font-semibold">Get your JR Pass here &rarr;</a></p>
+                                <p><strong>Day 5-6: Kyoto.</strong> Step into old Japan. Visit the stunning Kinkaku-ji (Golden Pavilion), walk through thousands of red gates at Fushimi Inari, and find peace in the Arashiyama Bamboo Grove.</p>
+                                <p><strong>Day 7: Depart.</strong> Easily travel from Kyoto to Kansai International Airport (KIX) or take the Shinkansen back to Tokyo for your flight home.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Itinerary 2: 14-Day Golden Route -->
+                <article id="14-day" class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <img src="https://placehold.co/600x800/A7F3D0/047857?text=Golden+Route" class="rounded-lg object-cover w-full h-full" alt="Miyajima Island">
+                        </div>
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold mb-2">The 14-Day Golden Route & Beyond</h2>
+                            <p class="text-gray-600 mb-1"><span class="font-semibold">Focus:</span> Tokyo, Hakone, Kyoto, Nara, & Hiroshima</p>
+                            <p class="text-gray-600 mb-4"><span class="font-semibold">Best for:</span> The comprehensive Japan experience.</p>
+                             <div class="space-y-4 text-gray-700">
+                                <p><strong>Day 1-4: Tokyo.</strong> Get your fill of the capital with an extra day for a trip to the Ghibli Museum or exploring trendy neighborhoods like Shimokitazawa.</p>
+                                <p><strong>Day 5: Hakone.</strong> Escape to the mountains for stunning views of Mt. Fuji. Stay in a traditional Ryokan and experience a relaxing onsen (hot spring). <a href="#" class="text-red-600 font-semibold">Find a Ryokan in Hakone &rarr;</a></p>
+                                <p><strong>Day 6-9: Kyoto.</strong> Immerse yourself in the cultural capital with plenty of time for temples, gardens, and perhaps a traditional tea ceremony.</p>
+                                <p><strong>Day 10: Nara.</strong> Take a day trip to Japan's first capital and make friends with the famous bowing deer in Nara Park.</p>
+                                <p><strong>Day 11-12: Hiroshima & Miyajima.</strong> A powerful and moving experience. Visit the Peace Memorial Park and Museum, then take a ferry to the beautiful Miyajima Island to see the iconic "floating" torii gate.</p>
+                                <p><strong>Day 13-14: Travel & Depart.</strong> Take a final Shinkansen ride back to your departure city.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Itinerary 3: 10-Day Pop Culture Tour -->
+                <article id="10-day" class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <img src="https://placehold.co/600x800/FBCFE8/9D26B0?text=Pop+Culture" class="rounded-lg object-cover w-full h-full" alt="Akihabara at night">
+                        </div>
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold mb-2">The 10-Day Anime & Pop Culture Tour</h2>
+                            <p class="text-gray-600 mb-1"><span class="font-semibold">Focus:</span> Tokyo & Osaka</p>
+                            <p class="text-gray-600 mb-4"><span class="font-semibold">Best for:</span> Fans of anime, manga, and video games.</p>
+                            <div class="space-y-4 text-gray-700">
+                                <p><strong>Day 1-5: Tokyo.</strong> Your anime pilgrimage begins! Hit the arcades and shops of Akihabara, hunt for treasures at Nakano Broadway, and visit the Ghibli Museum (book months in advance!). <a href="#" class="text-red-600 font-semibold">Check Ghibli ticket services &rarr;</a></p>
+                                <p><strong>Day 6: Travel to Osaka.</strong></p>
+                                <p><strong>Day 7-9: Osaka.</strong> Explore the electric Dotonbori district, visit Japan's kitchen, and geek out in Nipponbashi (Den Den Town). A must-do is Universal Studios Japan for Super Nintendo World. <a href="#" class="text-red-600 font-semibold">Get USJ passes here &rarr;</a></p>
+                                <p><strong>Day 10: Depart.</strong> Fly out of Kansai International Airport (KIX), filled with memories and probably too much merchandise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Consistent with other pages) -->
+    <footer class="bg-gray-800 text-white">
+        <!-- You would paste your standard footer code here -->
+        <div class="container mx-auto px-6 py-12 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
