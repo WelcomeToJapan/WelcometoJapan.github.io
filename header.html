@@ -74,21 +74,3 @@
         </div>
     </nav>
 </header>
-
-<script>
-    // This script is part of header.html and will be loaded by each page.
-    // It handles the mobile menu toggle.
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
-
-    // Note: The lucide.createIcons() call is handled by the main page's DOMContentLoaded listener
-    // after the header HTML is fetched and inserted.
-</script>
