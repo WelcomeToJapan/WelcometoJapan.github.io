@@ -77,8 +77,10 @@
         </div>
     </footer>
 
+    <!-- Link to your shared JavaScript file -->
+    <script src="main.js"></script>
     <script>
-        // JavaScript to load the header
+        // JavaScript to load the header AND handle mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             fetch('header.html')
                 .then(response => {
@@ -89,8 +91,13 @@
                 })
                 .then(html => {
                     document.getElementById('header-placeholder').innerHTML = html;
+                    
                     // Re-initialize Lucide icons after content is loaded
                     lucide.createIcons();
+
+                    // Call the function from main.js to initialize the mobile menu
+                    initializeMobileMenu(); 
+
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
