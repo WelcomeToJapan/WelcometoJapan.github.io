@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Accommodation Guide: Ryokans, Hotels, Hostels & More</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for content readability */
+        .content-prose h3 {
+            @apply text-3xl font-bold mt-16 mb-6 border-b pb-3;
+        }
+        .content-prose p {
+            @apply mb-4 leading-relaxed;
+        }
+        .content-prose ul {
+            @apply list-none p-0 space-y-2;
+        }
+        .content-prose li {
+            @apply flex items-start;
+        }
+        .content-prose li i {
+            @apply w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0;
+        }
+        .content-prose .price-rating {
+            @apply font-mono text-lg tracking-wider;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation (Consistent with other pages) -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <!-- You would paste your standard header code here -->
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                <!-- Add full nav later -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[40vh] min-h-[280px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <img src="https://placehold.co/1600x500/333333/FFFFFF?text=Japanese+Hotel+Lobby" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1600x500/cccccc/666666?text=Image+Not+Found';"
+                 alt="Accommodation in Japan" 
+                 class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">Find Your Perfect Stay</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">From traditional inns to futuristic capsules, a guide to accommodation in Japan.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="py-12 sm:py-16">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center">
+                    <p class="text-xl leading-relaxed max-w-3xl mx-auto">Choosing where to stay is a huge part of your trip! Japan offers a fantastic range of lodging, from deeply traditional experiences to the ultra-modern. This guide breaks down the main types to help you find the right fit for your travel style and budget.</p>
+                </div>
+
+                <div class="content-prose mt-8">
+
+                    <!-- Section 1: Ryokan -->
+                    <div id="ryokan">
+                        <h3>Ryokan (Traditional Inns)</h3>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <p>A stay at a ryokan is more than just a place to sleep—it's a cultural experience. Expect tatami mat floors, sliding paper doors, and sleeping on comfortable futons. Many ryokan have their own onsen (hot springs) and serve exquisite multi-course *kaiseki* dinners.</p>
+                                <ul>
+                                    <li><i data-lucide="star"></i><strong>Best for:</strong> Cultural immersion, relaxation, romantic getaways, special occasions.</li>
+                                    <li><i data-lucide="user-check"></i><strong>Who it's for:</strong> Travelers who want to experience traditional Japanese hospitality.</li>
+                                    <li><i data-lucide="dollar-sign"></i><strong>Price:</strong> <span class="price-rating text-amber-500">$$$ - $$$$</span> (Often includes dinner and breakfast)</li>
+                                </ul>
+                                <a href="#" class="mt-4 inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors">Find a Ryokan &rarr;</a>
+                            </div>
+                            <img src="images/ryokan.jpg" alt="Ryokan" class="rounded-lg shadow-xl w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Hotels -->
+                    <div id="hotels">
+                        <h3>Hotels</h3>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                             <img src="images/hotel.jpg" alt="Hotel" class="rounded-lg shadow-xl w-full h-full object-cover md:order-2">
+                            <div class="md:order-1">
+                                <p>You'll find a wide range of familiar, Western-style hotels in Japan. For a great value, look for "business hotels" like APA Hotel or Dormy Inn. They offer small, clean, and efficient rooms packed with amenities, often at a very reasonable price.</p>
+                                <ul>
+                                    <li><i data-lucide="star"></i><strong>Best for:</strong> Comfort, convenience, predictability, and travelers with lots of luggage.</li>
+                                    <li><i data-lucide="user-check"></i><strong>Who it's for:</strong> Families, business travelers, first-time visitors who want a familiar setup.</li>
+                                    <li><i data-lucide="dollar-sign"></i><strong>Price:</strong> <span class="price-rating text-green-500">$$ - $$$$</span></li>
+                                </ul>
+                                <a href="#" class="mt-4 inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors">Search for Hotels &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Hostels -->
+                    <div id="hostels">
+                        <h3>Hostels & Guesthouses</h3>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <p>Japan has a thriving scene of modern, clean, and friendly hostels. They are no longer just for young backpackers. Many offer private rooms in addition to dorms, along with excellent social spaces and shared kitchens, making them a great way to meet other travelers.</p>
+                                <ul>
+                                    <li><i data-lucide="star"></i><strong>Best for:</strong> Saving money, meeting other travelers, social atmosphere.</li>
+                                    <li><i data-lucide="user-check"></i><strong>Who it's for:</strong> Solo travelers, backpackers, and budget-conscious groups.</li>
+                                    <li><i data-lucide="dollar-sign"></i><strong>Price:</strong> <span class="price-rating text-green-500">$ - $$</span></li>
+                                </ul>
+                                <a href="#" class="mt-4 inline-block bg-red-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-700 transition-colors">Browse Hostels &rarr;</a>
+                            </div>
+                            <img src="images/hostel.jpg" alt="Hostel" class="rounded-lg shadow-xl w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Unique Stays -->
+                    <div id="unique">
+                        <h3>Unique Japanese Stays</h3>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <img src="images/capsule.jpg" alt="Capsule Hotel" class="rounded-lg shadow-xl w-full h-full object-cover md:order-2">
+                            <div class="md:order-1">
+                                <h4 class="mt-0 text-2xl font-bold">Capsule Hotels</h4>
+                                <p>An iconic Japanese experience! A capsule hotel provides a small bed-sized pod for sleeping. They are surprisingly comfortable, impeccably clean, and offer shared bathrooms and lounges. It's a fantastic, affordable option for a night or two.</p>
+                                <ul>
+                                    <li><i data-lucide="star"></i><strong>Best for:</strong> A unique experience, last-minute stays, saving money.</li>
+                                    <li><i data-lucide="user-check"></i><strong>Who it's for:</strong> Solo travelers who pack light and aren't claustrophobic.</li>
+                                    <li><i data-lucide="dollar-sign"></i><strong>Price:</strong> <span class="price-rating text-green-500">$</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Consistent with other pages) -->
+    <footer class="bg-gray-800 text-white">
+        <!-- You would paste your standard footer code here -->
+        <div class="container mx-auto px-6 py-12 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
