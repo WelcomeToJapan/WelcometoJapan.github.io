@@ -20,6 +20,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
         .prose h3 {
             @apply text-2xl font-bold mt-12 mb-4;
         }
@@ -35,20 +36,41 @@
         .prose a {
             @apply text-red-600 font-semibold hover:underline;
         }
+        /* Custom styles for tables/charts if needed */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0; /* Tailwind's gray-200 */
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc; /* Tailwind's gray-50 */
+            font-weight: 600;
+            color: #1a202c; /* Tailwind's gray-900 */
+        }
+        td {
+            color: #4a5568; /* Tailwind's gray-700 */
+        }
     </style>
+    <!-- Affiliate Tracking/Ownership Confirmation Script -->
+    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+        (function () {
+            var script = document.createElement("script");
+            script.async = 1;
+            script.src = 'https://emrldtp.com/NDQyMDM2.js?t=442036';
+            document.head.appendChild(script);
+        })();
+    </script>
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Header & Navigation (Consistent with other pages) -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <!-- You would paste your standard header code here -->
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
-                <!-- Add full nav later -->
-            </div>
-        </nav>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <main>
         <!-- Hero Section -->
@@ -107,7 +129,7 @@
                         </div>
                     </div>
 
-                     <!-- Section 3: Other Ways to Travel -->
+                    <!-- Section 3: Other Ways to Travel -->
                     <h3>Other Travel Options</h3>
                     <h4>Individual Shinkansen Tickets</h4>
                     <p>If a JR Pass isn't cost-effective for you, buying individual tickets is easy. You can purchase them at any JR ticket office or from a ticket machine. This is the best option if you're only making one or two long-distance trips.</p>
@@ -124,13 +146,40 @@
 
     <!-- Footer (Consistent with other pages) -->
     <footer class="bg-gray-800 text-white">
-        <!-- You would paste your standard footer code here -->
         <div class="container mx-auto px-6 py-12 text-center">
             <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Link to your shared JavaScript file -->
+    <script src="main.js"></script>
     <script>
+        // JavaScript to load the header AND handle mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    
+                    // Re-initialize Lucide icons after content is loaded
+                    lucide.createIcons();
+
+                    // Call the function from main.js to initialize the mobile menu
+                    initializeMobileMenu(); 
+
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+
+        // Initialize Lucide icons for static content (if any)
+        // Note: lucide.createIcons() is called again after header load to ensure new icons are rendered.
         lucide.createIcons();
     </script>
 </body>
