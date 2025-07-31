@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Much Does Japan Cost? How Much You Might Need</title>
+    <title>How Much Does Japan Cost? Interactive Budget Calculator</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -92,6 +92,39 @@
                     </div>
                 </div>
 
+                <!-- Interactive Budget Calculator -->
+                <section id="calculator" class="bg-gray-100 p-8 rounded-2xl shadow-inner">
+                    <h2 class="text-3xl font-bold text-center mb-6">Interactive Trip Budget Calculator</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <!-- Inputs -->
+                        <div class="space-y-6">
+                            <div>
+                                <label for="trip-days" class="block text-lg font-semibold mb-2">Number of Days</label>
+                                <input type="number" id="trip-days" value="10" class="w-full p-3 rounded-lg border border-gray-300 text-lg">
+                            </div>
+                            <div>
+                                <label for="travel-style" class="block text-lg font-semibold mb-2">Travel Style</label>
+                                <select id="travel-style" class="w-full p-3 rounded-lg border border-gray-300 text-lg bg-white">
+                                    <option value="budget">Budget</option>
+                                    <option value="mid" selected>Mid-Range</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Outputs -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-center mt-0 mb-4">Estimated Total Cost</h3>
+                            <p class="text-5xl font-extrabold text-center text-red-600 mb-6" id="total-cost">¥200,000</p>
+                            <div class="space-y-3 text-lg">
+                                <div class="flex justify-between"><span>Accommodation:</span> <span id="accommodation-cost" class="font-semibold">¥120,000</span></div>
+                                <div class="flex justify-between border-t pt-3"><span>Food:</span> <span id="food-cost" class="font-semibold">¥60,000</span></div>
+                                <div class="flex justify-between border-t pt-3"><span>Activities & Local Transport:</span> <span id="activities-cost" class="font-semibold">¥20,000</span></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 text-center">This estimate does not include flights or long-distance train passes.</p>
+                        </div>
+                    </div>
+                </section>
+
                 <div class="prose max-w-none">
                     <!-- Detailed Breakdown -->
                     <h2>Detailed Cost Breakdown</h2>
@@ -116,7 +149,7 @@
                                 <li><strong>Budget Tip:</strong> Plan for around ¥4,000 - ¥6,000 per person per day for a good mix of cheap eats and one nice restaurant meal.</li>
                             </ul>
                         </div>
-                        <img src="images/budget4.jpg" alt="A delicious bowl of Japanese ramen" class="rounded-lg shadow-lg object-cover w-full h-full max-h-64 md:max-h-full">
+                        <img src="images/ramen1.jpg" alt="A delicious bowl of Japanese ramen" class="rounded-lg shadow-lg object-cover w-full h-full max-h-64 md:max-h-full">
                     </div>
 
 
@@ -145,7 +178,7 @@
                                 <li><strong>Travel Off-Season:</strong> Avoid late March/early April (cherry blossoms) and Golden Week (late April/early May) when prices for flights and hotels skyrocket.</li>
                             </ul>
                         </div>
-                        <img src="images/budget3.jpg" alt="The entrance to a Japanese convenience store" class="rounded-lg shadow-lg object-cover w-full h-full max-h-64 md:max-h-full">
+                        <img src="images/konbini1.jpg" alt="The entrance to a Japanese convenience store" class="rounded-lg shadow-lg object-cover w-full h-full max-h-64 md:max-h-full">
                     </div>
                      <ul class="space-y-3 mt-4">
                         <li><strong>Use Highway Buses:</strong> For city-to-city travel without a JR Pass, night buses are slow but cheap, and can save you a night's accommodation cost.</li>
@@ -166,6 +199,48 @@
 
     <script>
         lucide.createIcons();
+
+        // --- Budget Calculator Logic ---
+        const tripDaysInput = document.getElementById('trip-days');
+        const travelStyleSelect = document.getElementById('travel-style');
+        
+        const totalCostEl = document.getElementById('total-cost');
+        const accommodationCostEl = document.getElementById('accommodation-cost');
+        const foodCostEl = document.getElementById('food-cost');
+        const activitiesCostEl = document.getElementById('activities-cost');
+
+        // Daily cost estimates per person
+        const dailyCosts = {
+            budget: { accommodation: 4000, food: 4000, activities: 1000 },
+            mid: { accommodation: 12000, food: 6000, activities: 2000 },
+            luxury: { accommodation: 30000, food: 10000, activities: 5000 }
+        };
+
+        function calculateBudget() {
+            const days = parseInt(tripDaysInput.value) || 0;
+            const style = travelStyleSelect.value;
+            
+            const costs = dailyCosts[style];
+            
+            const accommodationTotal = days * costs.accommodation;
+            const foodTotal = days * costs.food;
+            const activitiesTotal = days * costs.activities;
+            const grandTotal = accommodationTotal + foodTotal + activitiesTotal;
+
+            // Update the UI
+            totalCostEl.innerText = `¥${grandTotal.toLocaleString()}`;
+            accommodationCostEl.innerText = `¥${accommodationTotal.toLocaleString()}`;
+            foodCostEl.innerText = `¥${foodTotal.toLocaleString()}`;
+            activitiesCostEl.innerText = `¥${activitiesTotal.toLocaleString()}`;
+        }
+
+        // Event Listeners
+        tripDaysInput.addEventListener('input', calculateBudget);
+        travelStyleSelect.addEventListener('change', calculateBudget);
+
+        // Initial calculation on page load
+        window.addEventListener('load', calculateBudget);
+
     </script>
 </body>
 </html>
