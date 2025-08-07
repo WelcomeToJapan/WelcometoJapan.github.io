@@ -1,100 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japanese Etiquette Guide</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Etiquette Guide</title>
+    <!-- Google Fonts: Inter and Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* Custom styles from the original page */
+        .content-prose h2 {
+            @apply text-3xl font-bold mt-16 mb-6 border-b pb-3;
+        }
+        .content-prose h3 {
+            @apply text-2xl font-bold mt-10 mb-4;
+        }
+        .content-prose p {
+            @apply mb-4 leading-relaxed;
+        }
+        .content-prose ul {
+            @apply list-disc list-inside space-y-2;
+        }
+        .content-prose a {
+            @apply text-indigo-600 hover:text-indigo-800 transition-colors underline;
+        }
+        /* Custom styles for the article page layout */
+        .article-page {
+            max-width: 80rem; /* Use a larger max-width for the article container */
+        }
+        .article-container {
+            max-width: 50rem; /* Max width for the content column */
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen p-4 sm:p-8">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Main Container -->
-  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-gray-200">
-
-    <!-- Header -->
-    <header class="mb-8 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-indigo-700 mb-2">Japanese Etiquette & Culture</h1>
-      <p class="text-lg text-gray-500">A simple guide for a trip to Japan.</p>
+    <!-- Unified Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="header.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                <!-- Add full nav later -->
+            </div>
+        </nav>
     </header>
 
-    <!-- Content Sections -->
-    <div class="space-y-10">
+    <!-- Main Content Area -->
+    <main class="min-h-screen">
+        <div class="container mx-auto px-6 py-12">
+            <!-- This is the main content from your original page -->
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-10 border border-gray-200">
 
-      <!-- Greetings Section -->
-      <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Greetings and Social Etiquette</h2>
-        <p class="text-gray-700 mb-4">
-          Courtesy and respect are a part of daily Japanese life, though hopefully they are of yours too! Understanding certain customs can make a big difference.
-        </p>
-        <ul class="list-none space-y-4">
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Bowing:</strong> A simple head nod or a shallow bow is a great way to show respect or gratitude.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Giving & Receiving:</strong> Always use two hands when exchanging items like business cards.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Public Behavior:</strong> Keep your voice down on public transport and follow queuing etiquette.
-          </li>
-        </ul>
-      </section>
+                <!-- Content Sections -->
+                <div class="space-y-10">
+                    <!-- Greetings Section -->
+                    <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Greetings and Social Etiquette</h2>
+                        <p class="text-gray-700 mb-4">
+                            Courtesy and respect are a part of daily Japanese life, though hopefully they are of yours too! Understanding certain customs can make a big difference.
+                        </p>
+                        <ul class="list-none space-y-4">
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Bowing:</strong> A simple head nod or a shallow bow is a great way to show respect or gratitude.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Giving & Receiving:</strong> Always use two hands when exchanging items like business cards.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Public Behavior:</strong> Keep your voice down on public transport and follow queuing etiquette.
+                            </li>
+                        </ul>
+                    </section>
 
-      <!-- Dining Section -->
-      <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Dining Customs</h2>
-        <p class="text-gray-700 mb-4">
-          Japanese meals are a wonderful experience, and a few key phrases and rules will help you feel right at home.
-        </p>
-        <ul class="list-none space-y-4">
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Before & After:</strong> Say "itadakimasu" before you eat and "gochisousama deshita" after.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Chopsticks:</strong> Never stick them upright in your rice or pass food from one set to another.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Noodles:</strong> It's polite to slurp your noodles - it is meant improve the taste, and tbh after years here I have begun to believe it myself. Maybe its something about letting the air into your palate?
-          </li>
-        </ul>
-      </section>
+                    <!-- Dining Section -->
+                    <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Dining Customs</h2>
+                        <p class="text-gray-700 mb-4">
+                            Japanese meals are a wonderful experience, and a few key phrases and rules will help you feel right at home.
+                        </p>
+                        <ul class="list-none space-y-4">
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Before & After:</strong> Say "itadakimasu" before you eat and "gochisousama deshita" after.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Chopsticks:</strong> Never stick them upright in your rice or pass food from one set to another.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Noodles:</strong> It's polite to slurp your noodles - it is meant improve the taste, and tbh after years here I have begun to believe it myself. Maybe its something about letting the air into your palate?
+                            </li>
+                        </ul>
+                    </section>
 
-      <!-- Onsen Section -->
-      <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Onsen (Hot Springs) Etiquette</h2>
-        <p class="text-gray-700 mb-4">
-          A trip to an onsen is a must, but remember these rules for a respectful and relaxing experience.
-        </p>
-        <ul class="list-none space-y-4">
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Get Naked:</strong> You must be completely nude to enter the bathing area. For first-timers, this might be a nerve-wracking experience, but after a few goes it becomes totally normal. No one is looking, no one cares, so just get over yourself and relax! Or get a private onsen.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Wash First:</strong> You must wash your body thoroughly at a shower stall before entering the bath.
-          </li>
-          <li class="p-4 bg-white rounded-md shadow-md">
-            <strong class="text-indigo-800">Tattoos:</strong> Many onsen do not allow tattoos, though smaller ones may be covered with a patch.
-          </li>
-        </ul>
-      </section>
+                    <!-- Onsen Section -->
+                    <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Onsen (Hot Springs) Etiquette</h2>
+                        <p class="text-gray-700 mb-4">
+                            A trip to an onsen is a must, but remember these rules for a respectful and relaxing experience.
+                        </p>
+                        <ul class="list-none space-y-4">
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Get Naked:</strong> You must be completely nude to enter the bathing area. For first-timers, this might be a nerve-wracking experience, but after a few goes it becomes totally normal. No one is looking, no one cares, so just get over yourself and relax! Or get a private onsen.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Wash First:</strong> You must wash your body thoroughly at a shower stall before entering the bath.
+                            </li>
+                            <li class="p-4 bg-white rounded-md shadow-md">
+                                <strong class="text-indigo-800">Tattoos:</strong> Many onsen do not allow tattoos, though smaller ones may be covered with a patch.
+                            </li>
+                        </ul>
+                    </section>
 
-      <!-- Gift-Giving Section -->
-      <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Gift-Giving (Omiyage)</h2>
-        <p class="text-gray-700">
-          The tradition of omiyage is a thoughtful gesture. It's common to bring back gifts from a specific location to share with others. Said more simply, it's souvenirs. Omiyage are souvenirs. Buy souvenirs. Bring small gifts if you are visiting someone. It's not rocket science.
-        </p>
-      </section>
+                    <!-- Gift-Giving Section -->
+                    <section class="p-6 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-4">Gift-Giving (Omiyage)</h2>
+                        <p class="text-gray-700">
+                            The tradition of omiyage is a thoughtful gesture. It's common to bring back gifts from a specific location to share with others. Said more simply, it's souvenirs. Omiyage are souvenirs. Buy souvenirs. Bring small gifts if you are visiting someone. It's not rocket science.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    </div>
-  </div>
+    <!-- Unified Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <script>
+        // Initializes Lucide icons on the page
+        lucide.createIcons();
+    </script>
 </body>
 </html>
