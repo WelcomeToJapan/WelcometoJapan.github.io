@@ -36,22 +36,14 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation (Consistent with other pages) -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <!-- You would paste your standard header code here -->
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
-                <!-- Add full nav later -->
-            </div>
-        </nav>
-    </header>
+    <!-- The header will be inserted here by JavaScript -->
+    <header id="header-placeholder"></header>
 
     <main>
         <!-- Hero Section -->
         <section class="relative h-[40vh] min-h-[280px] flex items-center justify-center text-white text-center">
             <div class="absolute inset-0 bg-black opacity-50"></div>
-            <img src="images/shabushabu.jpg" 
+            <img src="https://placehold.co/1600x500/333333/FFFFFF?text=Japanese+Food+Feast" 
                  onerror="this.onerror=null;this.src='https://placehold.co/1600x500/cccccc/666666?text=Image+Not+Found';"
                  alt="A delicious spread of various Japanese foods" 
                  class="w-full h-full object-cover">
@@ -142,15 +134,66 @@
         </section>
     </main>
 
-    <!-- Footer (Consistent with other pages) -->
-    <footer class="bg-gray-800 text-white">
-        <!-- You would paste your standard footer code here -->
-        <div class="container mx-auto px-6 py-12 text-center">
-            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <!-- The footer will be inserted here by JavaScript -->
+    <footer id="footer-placeholder"></footer>
 
     <script>
+        // Fetches and inserts the header from header.html
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for header');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Re-initialize Lucide icons after the header is loaded
+                lucide.createIcons();
+
+                // Mobile menu functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenuButton) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the header:', error);
+                // Fallback content in case the header fails to load
+                document.getElementById('header-placeholder').innerHTML = `
+                    <nav class="container mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                        </div>
+                    </nav>
+                `;
+            });
+        
+        // Fetches and inserts the footer from footer.html
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for footer');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the footer:', error);
+                // Fallback content in case the footer fails to load
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <div class="container mx-auto px-6 py-12 text-center">
+                        <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+                    </div>
+                `;
+            });
+
+        // Initializes Lucide icons for the rest of the page content
         lucide.createIcons();
     </script>
 </body>
