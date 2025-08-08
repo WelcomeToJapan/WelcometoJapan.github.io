@@ -3,139 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Welcome to Japan</title>
+    <title>Top 10 Foods You Must Try in Japan</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .dropdown-menu { transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .prose h2 {
+            @apply text-4xl font-bold mt-12 mb-2;
+        }
+        .prose h3 {
+            @apply text-2xl font-semibold mt-8 mb-3;
+        }
+        .prose p {
+            @apply text-lg text-gray-700 mb-4 leading-relaxed;
+        }
+        .prose a {
+            @apply text-red-600 font-semibold hover:underline;
+        }
     </style>
-    <!-- Affiliate Tracking/Ownership Confirmation Script -->
-    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
-        (function () {
-            var script = document.createElement("script");
-            script.async = 1;
-            script.src = 'https://emrldtp.com/NDQyMDM2.js?t=442036';
-            document.head.appendChild(script);
-        })();
-    </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    <!-- Header & Navigation (Consistent with other pages) -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <!-- You would paste your standard header code here -->
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                <!-- Add full nav later -->
+            </div>
+        </nav>
+    </header>
 
     <main>
-        <!-- Hero Section for Blog -->
-        <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center text-white text-center">
-            <div class="absolute inset-0 bg-black opacity-40"></div>
-            <!-- Updated hero image source to shabushabu.jpg -->
-            <img src="images/shabushabu.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/4B5563/FFFFFF?text=Blog+Header';" alt="A delicious shabu-shabu meal" class="w-full h-full object-cover">
+        <!-- Hero Section -->
+        <section class="relative h-[40vh] min-h-[280px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <img src="https://placehold.co/1600x500/333333/FFFFFF?text=Japanese+Food+Feast" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1600x500/cccccc/666666?text=Image+Not+Found';"
+                 alt="A delicious spread of various Japanese foods" 
+                 class="w-full h-full object-cover">
             <div class="relative z-10 px-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">Our Japan Blog</h1>
-                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">Insights, tips, and stories from the Land of the Rising Sun.</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">Top 10 Foods You Must Try in Japan</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">My personal list of unmissable culinary experiences.</p>
             </div>
         </section>
 
-        <!-- Blog Post List Section -->
-        <section class="py-16 sm:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Latest Posts</h2>
-                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Stay updated with our newest articles and guides.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Blog Post Card 1 (Fukushima) -->
-                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="images/fukushimaview.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/6B7280/FFFFFF?text=Fukushima+Blog';" alt="Fukushima landscape" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Fukushima: More Than Just 3.11</h3>
-                            <p class="text-gray-600 text-sm mb-4">July 25, 2025 | Local Insights</p>
-                            <p class="text-gray-700 mb-4">Discover the stunning landscapes, delicious food, and hidden gems of Fukushima Prefecture.</p>
-                            <a href="blog1.html" class="font-semibold text-red-600 hover:text-red-800 transition-colors flex items-center">Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></a>
-                        </div>
+        <!-- Main Content Area -->
+        <section class="py-12 sm:py-16">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="prose max-w-none">
+                    <p>Japan is famous for its cuisine, and it's impossible to list everything worth eating because it's ALL worth eating. But some foods are simply essential. This isn't a list of the fanciest foods, but a guide to some of the most delicious and memorable ones you can have here.</p>
+                    
+                    <!-- Food Item 10 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">10. Shabu-Shabu</h2>
+                        <img src="images/shabu.jpg" alt="Shabu-Shabu" class="rounded-lg shadow-lg w-full my-4">
+                        <p>A hot pot where you swish thinly sliced meat and vegetables in a simmering broth. The broth is set in the centre of the table, a pot of one or two flavours, and it's great for groups. You cook everything yourself, dipping it in sauce. I recommend sesame sauce, but try them all. Ponzu is probably the most “Japanese,” but I’m not sure what I’m basing that on apart from feel. Most ShabuShabu restaurants are tabehodai (all-you-can-eat), so keep on ordering and get full!</p>
                     </div>
 
-                    <!-- Blog Post Card 2 (Tohoku Guide) -->
-                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="images/zaoview.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C1DDC1/008000?text=Tohoku+Guide';" alt="Tohoku landscape" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Finding Japan in the North - A Guide to Travelling Tohoku</h3>
-                            <p class="text-gray-600 text-sm mb-4">July 28, 2025 | Travel Guide</p>
-                            <p class="text-gray-700 mb-4">Venture off the Golden Route for a deeper, less-touristy experience of Japan's northern gem.</p>
-                            <a href="blog2.html" class="font-semibold text-red-600 hover:text-red-800 transition-colors flex items-center">Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></a>
-                        </div>
+                    <!-- Food Item 9 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">9. Curry Rice (Kare Raisu)</h2>
+                        <img src="images/curryrice.jpg" alt="Curry Rice" class="rounded-lg shadow-lg w-full my-4">
+                        <p>Developed after the British Navy’s early 20th-century meals, Japanese curry is completely different from its Indian or Thai counterparts. It's thick, savoury, and often served over rice with a meat or a breaded pork cutlet (katsu curry). It's way better than it has any right to be, and a staple Japanese meal. It’s also quick, cheap, and filling. Chains like CoCo Ichibanya let you customize your spice level and toppings.</p>
                     </div>
 
-                    <!-- Blog Post Card 3 (Food Adventures) -->
-                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        <img src="images/jfood.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/D0E0F0/0000FF?text=Food+Adventures';" alt="Japanese food spread" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">A Taste of Japan: Pictures of Food</h3>
-                            <p class="text-gray-600 text-sm mb-4">July 29, 2025 | Food & Culture</p>
-                            <p class="text-gray-700 mb-4">Because what the world needs is more pictures of food.</p>
-                            <a href="blog3.html" class="font-semibold text-red-600 hover:text-red-800 transition-colors flex items-center">Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></a>
-                        </div>
+                    <!-- Food Item 8 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">8. Karaage</h2>
+                        <img src="images/kaarage.jpg" alt="Karaage" class="rounded-lg shadow-lg w-full my-4">
+                        <p>This is Japanese fried chicken, and it's as awesome as all fried chicken. Chicken thigh marinated in soy sauce, ginger, and garlic, then deep-fried to crispy perfection. It's juicy on the inside, crunchy on the outside, and found everywhere from convenience stores to izakaya (Japanese pubs) and restaurants.</p>
                     </div>
 
-                    <!-- Blog Post Card 4 (New Food Guide) -->
-                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        <!-- Updated image source to shabushabu2.jpg -->
-                        <img src="images/shabushabu2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFD700/000000?text=Japan+Food+Guide';" alt="A bowl of shabu-shabu" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">10 Foods You Must Try in Japan</h3>
-                            <p class="text-gray-600 text-sm mb-4">August 1, 2025 | Food Guide</p>
-                            <p class="text-gray-700 mb-4">A curated list of the most delicious and essential culinary experiences for your trip to Japan.</p>
-                            <a href="blog4.html" class="font-semibold text-red-600 hover:text-red-800 transition-colors flex items-center">Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></a>
-                        </div>
+                    <!-- Food Item 7 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">7. Unagi</h2>
+                        <img src="images/unagi.jpg" alt="Unagi" class="rounded-lg shadow-lg w-full my-4">
+                        <p>Grilled freshwater eel. This is a delicacy and a bit more expensive, but it’s worth it (in fact, DON’T go for cheap Unagi if you find it, go for the real deal). The eel is grilled over charcoal, basted in a sweet and savoury soy-based sauce, and served over rice (unadon). It has a rich, smoky flavour and melts in your mouth. There’s even a whole day dedicated to eating it.</p>
                     </div>
+
+                    <!-- Food Item 6 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">6. Gourmet Sushi</h2>
+                        <img src="images/sushig.jpg" alt="Gourmet Sushi" class="rounded-lg shadow-lg w-full my-4">
+                        <p>This is the sushi you see in media and your imagination, sitting at a counter, watching a master chef prepare each piece of nigiri by hand. The quality of the fish is high, and everything arranged to be traditional and aesthetically pleasing. It's the expensive version of sushi, but it's also culinary art and an important part of a Japan experience.</p>
+                    </div>
+
+                    <!-- Food Item 5 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">5. Kaiten Sushi (Conveyor Belt Sushi)</h2>
+                        <img src="images/sushik.jpg" alt="Kaiten Sushi" class="rounded-lg shadow-lg w-full my-4">
+                        <p>The cheap, delicious, easy, and better form of sushi. Order on a touch screen, then grab your plates as they go by on a conveyor belt. Chains like Hama Sushi, Sushiro, or Kura Sushi offer a huge variety of options, with most plates costing only around ¥110-¥200. They can be found everywhere, and are good for morning, afternoon, or evening.</p>
+                    </div>
+
+                    <!-- Food Item 4 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">4. Ramen</h2>
+                        <img src="images/Ramen1.jpg" alt="Ramen" class="rounded-lg shadow-lg w-full my-4">
+                        <p>A Chinese dish made Japanese, and a national obsession. Every region has its own specialty, some better some worse, but all worth a try. Just look for the word ラーメン wherever you go. I recommend tonkotsu in winter, or miso ramen anytime. Shio (salt) and shoyu (soy sauce) ramen are also mainstays.</p>
+                    </div>
+
+                    <!-- Food Item 3 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">3. Soba and Udon</h2>
+                        <img src="images/soba.jpg" alt="Soba and Udon" class="rounded-lg shadow-lg w-full my-4">
+                        <p>The other two pillars of the Japanese noodle world. Soba (thin buckwheat noodles) and Udon (thick wheat noodles) can be served hot in a savory broth or cold with a dipping sauce. They are simple and delicious. A cold bowl of zaru soba on a hot day is a great way to cool down.</p>
+                    </div>
+
+                    <!-- Food Item 2 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">2. Tempura</h2>
+                        <img src="images/tempura.jpg" alt="Tempura" class="rounded-lg shadow-lg w-full my-4">
+                        <p>Battered and deep-fried seafood and vegetables. Tempura is light and crispy, not greasy. You can get it served over rice (tendon) or as a set meal (teishoku).</p>
+                    </div>
+
+                    <!-- Food Item 1 -->
+                    <div class="mt-12">
+                        <h2 class="text-red-600">1. Tabehodai Yakiniku (All-You-Can-Eat BBQ)</h2>
+                        <img src="images/yakiniku.jpg" alt="Yakiniku" class="rounded-lg shadow-lg w-full my-4">
+                        <p>All-you-can-eat meat. What is not to love? Select from a variety of meats, veg, and more. Raid the dessert bar afterwards then stagger home clutching your stomach and regretting every bite because you are so full. Then do it again.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer - Consistent with other pages -->
+    <!-- Footer (Consistent with other pages) -->
     <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-                <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
-            </div>
+        <!-- You would paste your standard footer code here -->
+        <div class="container mx-auto px-6 py-12 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Link to your shared JavaScript file -->
-    <script src="main.js"></script>
     <script>
-        // JavaScript to load the header AND handle mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('header.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                    
-                    // Re-initialize Lucide icons after content is loaded
-                    lucide.createIcons();
-
-                    // Call the function from main.js to initialize the mobile menu
-                    initializeMobileMenu(); 
-
-                })
-                .catch(error => {
-                    console.error('There has been a problem with your fetch operation:', error);
-                });
-        });
-
-        // Initialize Lucide icons for static content (if any)
-        // Note: lucide.createIcons() is called again after header load to ensure new icons are rendered.
         lucide.createIcons();
     </script>
 </body>
