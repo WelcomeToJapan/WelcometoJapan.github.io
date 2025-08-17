@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrine vs. Temple in Japan: A Simple Guide</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .prose h2 {
+            @apply text-3xl font-bold mt-12 mb-6 border-b pb-3;
+        }
+        .prose h3 {
+            @apply text-2xl font-semibold mt-8 mb-4;
+        }
+        .prose p {
+            @apply text-lg text-gray-700 mb-4 leading-relaxed;
+        }
+        .prose ul {
+            @apply list-disc list-inside mb-4 pl-4 space-y-2 text-lg;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- The header will be inserted here by JavaScript -->
+    <header id="header-placeholder"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[40vh] min-h-[280px] flex items-center justify-center text-white text-center">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <img src="images/sanmon.jpg" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1600x500/cccccc/666666?text=Image+Not+Found';"
+                 alt="A Japanese temple gate" 
+                 class="w-full h-full object-cover">
+            <div class="relative z-10 px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">Shrine or Temple?</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 drop-shadow-md">A simple guide to understanding Japan's sacred sites.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="py-12 sm:py-16">
+            <div class="container mx-auto px-6 max-w-5xl prose">
+                <p>When you visit Japan, you'll be surrounded by beautiful sacred sites. But it can be confusing: which ones are Shinto shrines, and which are Buddhist temples? While the two religions are deeply intertwined in Japan, their places of worship have distinct features. This guide will show you the key differences to look for.</p>
+
+                <!-- Comparison Section -->
+                <div>
+                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 mt-12">
+                        <!-- Shrine Column -->
+                        <div class="border-t-4 border-red-500 pt-4">
+                            <h3 class="mt-0 text-red-600">Shinto Shrine (Jinja 神社)</h3>
+                            <p>Shinto is Japan's native religion. It's based on the worship of *kami* - gods, spirits, or divine essences that can be found in nature, places, and even people.</p>
+                            
+                            <h4>At the Entrance: Torii Gate</h4>
+                            <img src="images/torii.jpg" alt="A Shinto torii gate" class="rounded-lg shadow-md w-full">
+                            <p class="mt-2">The most obvious sign of a shrine is the **torii gate**. This simple, iconic gate (usually red, but sometimes wood or stone) marks the transition from the mundane world to the sacred ground of the kami.</p>
+
+                            <h4>Guardians: Komainu</h4>
+                            <img src="images/komainu.jpg" alt="Komainu lion-dog guardian statues" class="rounded-lg shadow-md w-full">
+                            <p class="mt-2">Guarding the entrance or main hall, you'll often find a pair of **komainu** (lion-dogs). One typically has its mouth open, the other closed.</p>
+                        </div>
+
+                        <!-- Temple Column -->
+                        <div class="border-t-4 border-indigo-500 pt-4">
+                            <h3 class="mt-0 text-indigo-600">Buddhist Temple (Tera 寺)</h3>
+                            <p>Buddhism was imported from mainland Asia in the 6th century. It's focused on the teachings of the Buddha and the path to enlightenment.</p>
+
+                            <h4>At the Entrance: Sanmon Gate</h4>
+                            <img src="images/sanmon.jpg" alt="A Buddhist sanmon gate" class="rounded-lg shadow-md w-full">
+                            <p class="mt-2">Temples have a **sanmon**, a large, often ornate gatehouse that you walk through. Many also have a pagoda, a multi-storied tower.</p>
+
+                            <h4>Guardians: Nio</h4>
+                            <img src="images/nio.jpg" alt="A Nio guardian statue" class="rounded-lg shadow-md w-full">
+                            <p class="mt-2">Inside the sanmon gate, you'll often find two large, muscular, and fierce-looking statues called **Nio guardians**. They ward off evil spirits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Famous Examples -->
+                <div class="prose max-w-none">
+                    <h2>Famous Examples</h2>
+                    <p>Here are some of Japan's most famous shrines and temples to help you see the differences in the real world.</p>
+
+                    <h3>Famous Shinto Shrines</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center mt-4">
+                        <div>
+                            <h4>Meiji Jingu, Tokyo</h4>
+                            <p>Dedicated to the spirits of Emperor Meiji and Empress Shoken, this is Tokyo's most important shrine. It's a peaceful oasis surrounded by a dense forest, showing the deep connection between Shinto and nature.</p>
+                        </div>
+                        <img src="images/meijijingu.jpg" alt="Meiji Jingu Shrine" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center mt-8">
+                        <div>
+                            <h4>Fushimi Inari Taisha, Kyoto</h4>
+                            <p>Famous for its thousands of vibrant red torii gates that wind up a mountainside. Each gate is a donation from an individual or a business. It's dedicated to Inari, the Shinto god of rice and sake.</p>
+                        </div>
+                        <img src="images/fushimiinari.jpg" alt="Fushimi Inari Shrine" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                    <h3 class="mt-16">Famous Buddhist Temples</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center mt-4">
+                        <div>
+                            <h4>Senso-ji, Tokyo</h4>
+                            <p>Tokyo's oldest temple is a bustling, vibrant complex dedicated to Kannon, the bodhisattva of compassion. You'll see a massive red lantern at its entrance gate, a five-story pagoda, and a large incense burner in front of the main hall.</p>
+                        </div>
+                        <img src="images/sensoji.jpg" alt="Senso-ji Temple" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center mt-8">
+                        <div>
+                            <h4>Kinkaku-ji, Kyoto</h4>
+                            <p>The famous "Golden Pavilion" is a Zen Buddhist temple whose top two floors are completely covered in gold leaf. It's set beautifully over a pond, creating a stunning reflection. It's one of Japan's most iconic sights.</p>
+                        </div>
+                        <img src="images/kinkakuji2.jpg" alt="Kinkaku-ji Temple" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- The footer will be inserted here by JavaScript -->
+    <footer id="footer-placeholder"></footer>
+
+    <script>
+        // Fetches and inserts the header from header.html
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for header');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Re-initialize Lucide icons after the header is loaded
+                lucide.createIcons();
+
+                // Mobile menu functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenuButton) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the header:', error);
+                // Fallback content in case the header fails to load
+                document.getElementById('header-placeholder').innerHTML = `
+                    <nav class="container mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                        </div>
+                    </nav>
+                `;
+            });
+        
+        // Fetches and inserts the footer from footer.html
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for footer');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the footer:', error);
+                // Fallback content in case the footer fails to load
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <div class="container mx-auto px-6 py-12 text-center">
+                        <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+                    </div>
+                `;
+            });
+
+        // Initializes Lucide icons for the rest of the page content
+        lucide.createIcons();
+    </script>
+</body>
+</html>
