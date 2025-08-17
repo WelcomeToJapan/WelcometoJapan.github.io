@@ -93,21 +93,8 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header bg-white/90 backdrop-blur-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-red-600">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                    </svg>
-                    <span>Welcome to Japan</span>
-                </a>
-                <!-- Add full nav later -->
-            </div>
-        </nav>
-    </header>
+    <!-- The header will be inserted here by JavaScript -->
+    <header id="header-placeholder"></header>
 
     <main class="py-16">
         <!-- Hero Section -->
@@ -197,15 +184,66 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <!-- The footer will be inserted here by JavaScript -->
+    <footer id="footer-placeholder"></footer>
 
     <script>
-        // Initialize Lucide icons
+        // Fetches and inserts the header from header.html
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for header');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Re-initialize Lucide icons after the header is loaded
+                lucide.createIcons();
+
+                // Mobile menu functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenuButton) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the header:', error);
+                // Fallback content in case the header fails to load
+                document.getElementById('header-placeholder').innerHTML = `
+                    <nav class="container mx-auto px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+                        </div>
+                    </nav>
+                `;
+            });
+        
+        // Fetches and inserts the footer from footer.html
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok for footer');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the footer:', error);
+                // Fallback content in case the footer fails to load
+                document.getElementById('footer-placeholder').innerHTML = `
+                    <div class="container mx-auto px-6 py-12 text-center">
+                        <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+                    </div>
+                `;
+            });
+
+        // Initializes Lucide icons for the rest of the page content
         lucide.createIcons();
     </script>
 </body>
