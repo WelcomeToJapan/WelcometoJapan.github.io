@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting in Japanese: A Beginner's Guide to Numbers</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Define fonts and a base text color */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            color: #1a202c; /* A slightly darker gray for better readability */
+            background-color: #f7fafc; /* A very light gray background */
+        }
+
+        /* Responsive styling for the main container */
+        .container {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Custom styling for the header */
+        .header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Custom styling for the content sections */
+        .content-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Styling for prose elements */
+        .prose h1, .prose h2, .prose h3 {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: #2d3748; /* Darker gray for headings */
+        }
+        .prose h2 {
+            @apply text-3xl font-bold mt-16 mb-6 border-b-2 border-red-500 pb-3;
+        }
+        .prose h3 {
+            @apply text-2xl font-semibold mt-12 mb-4;
+        }
+        .prose p {
+            @apply text-lg text-gray-700 mb-4 leading-relaxed;
+        }
+        .prose table {
+            @apply w-full text-lg my-6 border-collapse;
+        }
+        .prose th, .prose td {
+            @apply border border-gray-300 p-4 text-left;
+        }
+        .prose th {
+            @apply bg-red-100 font-semibold text-red-800;
+        }
+        .prose td {
+            @apply bg-white;
+        }
+        .prose tr:nth-child(even) td {
+            @apply bg-gray-50;
+        }
+        .prose ul {
+            @apply list-none pl-0;
+        }
+        .prose li {
+            @apply text-lg text-gray-700 mb-2 flex items-start;
+        }
+        .prose li::before {
+            content: "•";
+            color: #e53e3e; /* A red color for the bullet point */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .prose .highlight {
+            @apply bg-red-100 text-red-800 font-bold px-2 py-1 rounded-md transition-all duration-300 hover:bg-red-200;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header bg-white/90 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-red-600">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                    </svg>
+                    <span>Welcome to Japan</span>
+                </a>
+                <!-- Add full nav later -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg rounded-2xl mx-6 sm:mx-auto max-w-4xl overflow-hidden mb-16">
+            <div class="p-8 md:p-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Numbers in Japanese</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-red-100 opacity-90">From one to one million, a simple guide to mastering the Japanese counting system.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="content-section mx-6 sm:mx-auto p-8 sm:p-12 max-w-4xl">
+            <div class="prose">
+                <p>Learning to count is a fundamental step in any language. Luckily, the Japanese number system is incredibly logical and consistent. Once you learn the first ten numbers, you'll be able to count up to 99 with ease. Let's get started!</p>
+
+                <h3>The Basics: 1 to 10</h3>
+                <p>Everything starts here. Memorize these ten numbers, and the rest will fall into place. Note that some numbers have multiple readings, which are used in different contexts, but you can start with the most common ones.</p>
+                
+                <table class="text-center">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Kanji</th>
+                            <th>Reading (Romaji)</th>
+                            <th>Pronunciation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>一</td><td>ichi</td><td>ee-chee</td></tr>
+                        <tr><td>2</td><td>二</td><td>ni</td><td>nee</td></tr>
+                        <tr><td>3</td><td>三</td><td>san</td><td>sahn</td></tr>
+                        <tr><td>4</td><td>四</td><td>yon / shi</td><td>yohn / shee</td></tr>
+                        <tr><td>5</td><td>五</td><td>go</td><td>goh</td></tr>
+                        <tr><td>6</td><td>六</td><td>roku</td><td>roh-koo</td></tr>
+                        <tr><td>7</td><td>七</td><td>nana / shichi</td><td>nah-nah / shee-chee</td></tr>
+                        <tr><td>8</td><td>八</td><td>hachi</td><td>hah-chee</td></tr>
+                        <tr><td>9</td><td>九</td><td>kyuu / ku</td><td>kyoo / koo</td></tr>
+                        <tr><td>10</td><td>十</td><td>juu</td><td>joo</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Counting from 11 to 99</h3>
+                <p>This is where the logic begins. To make numbers from 11 to 19, you simply say "ten" (<span class="highlight">juu</span>) and add the second number. For multiples of ten, you say the number *then* "ten."</p>
+                <ul>
+                    <li><strong class="text-red-600">11</strong> is 10 + 1 &rarr; <span class="highlight">juu ichi</span></li>
+                    <li><strong class="text-red-600">14</strong> is 10 + 4 &rarr; <span class="highlight">juu yon</span></li>
+                    <li><strong class="text-red-600">20</strong> is 2 x 10 &rarr; <span class="highlight">ni juu</span></li>
+                    <li><strong class="text-red-600">30</strong> is 3 x 10 &rarr; <span class="highlight">san juu</span></li>
+                    <li><strong class="text-red-600">56</strong> is (5 x 10) + 6 &rarr; <span class="highlight">go juu roku</span></li>
+                </ul>
+
+                <h2>Bigger Numbers: Hundreds, Thousands, and Beyond</h2>
+                <p>The system continues with new words for larger values. The most important one to learn is <span class="highlight">man</span> (ten thousand), as this is where Japanese counting differs most from English.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Kanji</th>
+                            <th>Reading (Romaji)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>100</td><td>百</td><td>hyaku</td></tr>
+                        <tr><td>1,000</td><td>千</td><td>sen</td></tr>
+                        <tr><td>10,000</td><td>万</td><td>man</td></tr>
+                        <tr><td>100,000,000</td><td>億</td><td>oku</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>The Concept of 万 (man)</h3>
+                <p>In English, we count in thousands (1,000), ten thousands (10,000), hundred thousands (100,000). In Japan, the system groups by ten thousands. After you reach 9,999, the next unit is <span class="highlight">man</span>.</p>
+                <ul>
+                    <li><strong class="text-red-600">10,000</strong> is <span class="highlight">ichi man</span></li>
+                    <li><strong class="text-red-600">20,000</strong> is <span class="highlight">ni man</span> (two ten-thousands)</li>
+                    <li><strong class="text-red-600">100,000</strong> is <span class="highlight">juu man</span> (ten ten-thousands)</li>
+                </ul>
+
+                <h3>Putting It All Together: Examples</h3>
+                <p>Let's look at some examples to see how it works.</p>
+                <ul>
+                    <li><strong class="text-red-600">425</strong> &rarr; 4-hundreds + 2-tens + 5 &rarr; <span class="highlight">yon hyaku ni juu go</span></li>
+                    <li><strong class="text-red-600">1,984</strong> &rarr; 1-thousand + 9-hundreds + 8-tens + 4 &rarr; <span class="highlight">sen kyuu hyaku hachi juu yon</span></li>
+                    <li><strong class="text-red-600">56,789</strong> &rarr; 5-ten-thousands + 6-thousands + 7-hundreds + 8-tens + 9 &rarr; <span class="highlight">go man roku sen nana hyaku hachi juu kyuu</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
