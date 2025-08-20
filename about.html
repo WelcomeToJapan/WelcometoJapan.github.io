@@ -29,17 +29,20 @@
         .prose-about a {
             @apply text-red-600 font-semibold hover:underline;
         }
+        /* Style for the submit button when it's in a loading state */
+        .sending {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header & Navigation (Consistent with other pages) -->
     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <!-- You would paste your standard header code here -->
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
-                <!-- Add full nav later -->
             </div>
         </nav>
     </header>
@@ -56,30 +59,59 @@
         <!-- Main Content Area -->
         <section class="py-12 sm:py-16">
             <div class="container mx-auto px-6 max-w-4xl">
-                
-                <!-- Main Text -->
                 <div class="prose-about max-w-none">
                     <p>Hi, I'm Luke. I built this website because I am regularly asked for advice on visiting Japan by friends and family overseas, and noticed that most of their images of Japan come from the same few places and the same few things. Tokyo, Sushi, Kyoto, certain events in recent history... So, I wanted to share some of the knowledge and experiences I have built up over the decades.</p>
-                    
                     <p>I'm from the UK and first came here in 2006. I lived in Tokyo for three years, a great place for your early twenties, and of course visited Kyoto and all the usual spots early on, but came to realise that the parts of the country I most loved were elsewhere. I left Japan. lived around the world, came back, left again, came back, and then what was supposed to be another short stay turned into something permanent. I lived in a couple of different cities for a year or two but then, and for the last decade, in the countryside of Fukushima. It was never the plan, but I ended up building a family and a house here.</p>
-
                     <h2>Why This Website Exists</h2>
                     <p>When my friends visit, they have a great time, but they often want to do the same tourist trail. They see the famous spots, but it's busy (and getting busier), and relatively expensive. Imagine Japan - what's your image? Serene temples, relaxed dining, fun and exciting nightlife? Then you need to get away from the usual spots. The goal of this site is simple: to give you practical information so you can get off the beaten track and experience your own Japan.</p>
-                    
                     <h2>What Makes This Site Different</h2>
                     <p>The advice here comes from years of living in Japan, having a blast, then building a career, a home, a family, and eventually realising this is now my home. It's about traveling but also the practical stuff - how to navigate daily life, what things actually cost, how to deal with situations you won't read about in a guidebook. It's the information I share with friends.</p>
-                    
                     <p>Thanks for reading. I hope the information here is genuinely useful for your visit to this awesome country.</p>
-
                 </div>
+            </div>
+        </section>
 
+        <!-- Contact Form Section -->
+        <section class="bg-white py-16 sm:py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Have a Question?</h2>
+                    <p class="mt-4 text-lg text-gray-600">Drop a message below, and it will be saved directly to my records.</p>
+                </div>
+                <div class="mt-12 max-w-2xl mx-auto">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <div class="mt-1">
+                                <input type="text" name="name" id="name" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm p-3">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Your Email (for follow-up)</label>
+                            <div class="mt-1">
+                                <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm p-3">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <div class="mt-1">
+                                <textarea id="message" name="message" rows="4" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm p-3"></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="submit-button" type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <p id="form-status" class="mt-6 text-center text-lg font-medium"></p>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer (Consistent with other pages) -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white">
-        <!-- You would paste your standard footer code here -->
         <div class="container mx-auto px-6 py-12 text-center">
             <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
         </div>
@@ -87,6 +119,46 @@
 
     <script>
         lucide.createIcons();
+
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = document.getElementById('submit-button');
+        
+        // --- IMPORTANT: Replace this with your Google Apps Script URL ---
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw66BBXu2Qc6-lXx12JelFXqE4PdmVFaWry0ns_5N1-dbiaLqAAsWiNAS7WUBBtzj3j/exec';
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Disable button and show sending status
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            submitButton.classList.add('sending');
+            formStatus.textContent = '';
+            formStatus.className = 'mt-6 text-center text-lg font-medium';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    if (response.ok) {
+                        formStatus.textContent = 'Thank you! Your message has been sent.';
+                        formStatus.classList.add('text-green-600');
+                        form.reset();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    formStatus.textContent = 'Oops! There was a problem. Please try again.';
+                    formStatus.classList.add('text-red-600');
+                })
+                .finally(() => {
+                    // Re-enable the button
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                    submitButton.classList.remove('sending');
+                });
+        });
     </script>
 </body>
 </html>
