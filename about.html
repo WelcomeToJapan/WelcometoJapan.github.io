@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Welcome to Japan</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables are provided by the canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+
+        // Function to initialize Firebase and authenticate
+        const initializeFirebase = async () => {
+            try {
+                // Initialize Firebase app
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // Authenticate the user using the custom token
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                console.log("Firebase initialized and user authenticated.");
+            } catch (error) {
+                console.error("Error initializing Firebase or authenticating:", error);
+                // Handle initialization errors gracefully
+                document.getElementById('form-status').textContent = 'Error: Could not connect to the database. Please try again later.';
+                document.getElementById('form-status').classList.add('text-red-600');
+                document.getElementById('submit-button').disabled = true;
+            }
+        };
+
+        // Call the initialization function when the script loads
+        initializeFirebase();
+
+        window.lucide = lucide;
+        window.formHandler = {
+            addDoc,
+            collection,
+            db,
+            auth,
+            appId,
+        };
+    </script>
+
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .prose-about h2 {
             @apply text-3xl font-bold mt-12 mb-4 border-b pb-2;
         }
+
         .prose-about p {
             @apply text-lg text-gray-700 mb-4 leading-relaxed;
         }
+
         .prose-about a {
             @apply text-red-600 font-semibold hover:underline;
         }
+
         /* Style for the submit button when it's in a loading state */
         .sending {
             cursor: not-allowed;
@@ -36,6 +93,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header & Navigation (Consistent with other pages) -->
@@ -75,10 +133,15 @@
         <section class="bg-white py-16 sm:py-20">
             <div class="container mx-auto px-6 max-w-4xl">
                 <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Have a Question?</h2>
-                    <p class="mt-4 text-lg text-gray-600">Drop a message below, and it will be saved directly to my records.</p>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Have a Question or Inquiry?</h2>
+                    <p class="mt-4 text-lg text-gray-600">Drop a message below. I am also available to assist with translation and/or, organising, booking, and preparing for a trip to or dealing with life in Japan. Enquire here.</p>
                 </div>
                 <div class="mt-12 max-w-2xl mx-auto">
+                    <!-- Added an alert box for user messages -->
+                    <div id="message-box" class="hidden p-4 mb-4 rounded-lg text-center" role="alert">
+                        <span id="message-text" class="font-medium"></span>
+                    </div>
+
                     <form id="contact-form" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
@@ -118,18 +181,18 @@
     </footer>
 
     <script>
+        // Create Lucide icons
         lucide.createIcons();
 
+        // Get elements from the DOM
         const form = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
         const submitButton = document.getElementById('submit-button');
-        
-        // --- IMPORTANT: Replace this with your Google Apps Script URL ---
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw66BBXu2Qc6-lXx12JelFXqE4PdmVFaWry0ns_5N1-dbiaLqAAsWiNAS7WUBBtzj3j/exec';
 
-        form.addEventListener('submit', e => {
+        // Main form submission logic
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             // Disable button and show sending status
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
@@ -137,27 +200,39 @@
             formStatus.textContent = '';
             formStatus.className = 'mt-6 text-center text-lg font-medium';
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    if (response.ok) {
-                        formStatus.textContent = 'Thank you! Your message has been sent.';
-                        formStatus.classList.add('text-green-600');
-                        form.reset();
-                    } else {
-                        throw new Error('Network response was not ok.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    formStatus.textContent = 'Oops! There was a problem. Please try again.';
-                    formStatus.classList.add('text-red-600');
-                })
-                .finally(() => {
-                    // Re-enable the button
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                    submitButton.classList.remove('sending');
-                });
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+                timestamp: new Date()
+            };
+
+            try {
+                // Ensure Firebase is initialized
+                if (!window.formHandler.db) {
+                    throw new Error("Firebase is not initialized.");
+                }
+
+                const { addDoc, collection, db, auth, appId } = window.formHandler;
+                const userId = auth.currentUser?.uid;
+                
+                // Add the form data to a new document in Firestore
+                await addDoc(collection(db, `/artifacts/${appId}/public/data/contact-form-submissions`), data);
+
+                formStatus.textContent = 'Thank you! Your message has been sent.';
+                formStatus.classList.add('text-green-600');
+                form.reset();
+            } catch (error) {
+                console.error('Error adding document: ', error);
+                formStatus.textContent = 'Oops! There was a problem. Please try again.';
+                formStatus.classList.add('text-red-600');
+            } finally {
+                // Re-enable the button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+                submitButton.classList.remove('sending');
+            }
         });
     </script>
 </body>
