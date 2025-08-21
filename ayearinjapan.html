@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Year in Japan: The Best Things to Do, See, and Eat Each Month</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .prose h2 {
+            @apply text-4xl font-bold mt-12 mb-2;
+        }
+        .prose h3 {
+            @apply text-2xl font-semibold mt-8 mb-3;
+        }
+        .prose p {
+            @apply text-lg text-gray-700 mb-4 leading-relaxed;
+        }
+        .prose ul {
+            @apply list-none p-0;
+        }
+        .prose li {
+            @apply flex items-start mb-2 text-lg;
+        }
+        .prose li i {
+            @apply w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0;
+        }
+        /* Style for the active month link */
+        .month-link.active {
+            @apply bg-red-600 text-white shadow-lg;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation (Consistent with other pages) -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-red-600">Welcome to Japan</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">A Year in Japan</h1>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">A month-by-month guide to festivals, food, and the best things to experience throughout the seasons.</p>
+            </div>
+        </section>
+
+        <!-- Interactive Month Selector -->
+        <nav class="sticky top-[72px] bg-white/90 backdrop-blur-lg shadow-md z-40 py-4">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap justify-center gap-2">
+                    <a href="#january" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="0">Jan</a>
+                    <a href="#february" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="1">Feb</a>
+                    <a href="#march" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="2">Mar</a>
+                    <a href="#april" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="3">Apr</a>
+                    <a href="#may" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="4">May</a>
+                    <a href="#june" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="5">Jun</a>
+                    <a href="#july" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="6">Jul</a>
+                    <a href="#august" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="7">Aug</a>
+                    <a href="#september" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="8">Sep</a>
+                    <a href="#october" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="9">Oct</a>
+                    <a href="#november" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="10">Nov</a>
+                    <a href="#december" class="month-link text-sm font-semibold px-3 py-2 rounded-full hover:bg-red-500 hover:text-white transition-colors" data-month="11">Dec</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <section class="py-12 sm:py-16">
+            <div class="container mx-auto px-6 max-w-5xl prose">
+
+                <!-- January -->
+                <section id="january" class="pt-8">
+                    <h2 class="text-indigo-600">January: Quiet Beginnings</h2>
+                    <ul>
+                        <li><i data-lucide="thermometer-snowflake"></i><strong>Weather:</strong> Cold and dry, with heavy snow in the north. Clear, crisp skies are common.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> New Year celebrations (*Hatsumode*), winter illuminations, sumo tournament in Tokyo.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Mochi (rice cakes), nabe (hot pot), crab, fugu (pufferfish).</li>
+                    </ul>
+                    <p>January is a quiet month for tourism. The first few days are for *Hatsumode*, the first shrine visit of the year. It's a great time for winter sports up north or enjoying an onsen without the crowds.</p>
+                </section>
+
+                <!-- February -->
+                <section id="february" class="pt-8">
+                    <h2 class="text-indigo-600">February: Snow & Plum Blossoms</h2>
+                    <ul>
+                        <li><i data-lucide="thermometer-snowflake"></i><strong>Weather:</strong> The coldest month, but the first signs of spring appear.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Sapporo Snow Festival, Setsubun (bean-throwing festival), plum blossom viewing.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Oysters, winter strawberries, fresh wasabi.</li>
+                    </ul>
+                    <p>The world-famous Sapporo Snow Festival is the main event, featuring enormous ice sculptures. Towards the end of the month, delicate plum blossoms (*ume*) begin to bloom, heralding the coming spring.</p>
+                </section>
+
+                <!-- March -->
+                <section id="march" class="pt-8">
+                    <h2 class="text-pink-600">March: The Coming of Spring</h2>
+                    <ul>
+                        <li><i data-lucide="sun"></i><strong>Weather:</strong> Cool but warming up. Still chilly at night.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Cherry blossoms begin in the south, sumo tournament in Osaka, AnimeJapan in Tokyo.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Bamboo shoots (*takenoko*), strawberries, clams.</li>
+                    </ul>
+                    <p>All eyes are on the cherry blossom forecast as the *sakura* front begins its slow march up the country. It's a beautiful transition month, but pack layers as the weather can be unpredictable.</p>
+                </section>
+
+                <!-- ... Add sections for all other months in the same format ... -->
+                
+                 <!-- April -->
+                <section id="april" class="pt-8">
+                    <h2 class="text-pink-600">April: Peak Sakura</h2>
+                    <ul>
+                        <li><i data-lucide="sun"></i><strong>Weather:</strong> Perfect. Mild, sunny, and pleasant.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Peak cherry blossom season in Tokyo and Kyoto, Takayama Spring Festival.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Fresh spring vegetables (*sansai*), sakura mochi.</li>
+                    </ul>
+                    <p>This is it—the iconic image of Japan. The country is at its most beautiful and its most crowded. Book everything far, far in advance. The end of the month marks the start of Golden Week, a major holiday period.</p>
+                </section>
+
+                 <!-- May -->
+                <section id="may" class="pt-8">
+                    <h2 class="text-green-600">May: Fresh Greens & Festivals</h2>
+                    <ul>
+                        <li><i data-lucide="sun"></i><strong>Weather:</strong> Warm and sunny, arguably the best weather of the year.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Golden Week (early May), Sanja Matsuri in Tokyo, wisteria and azalea flowers.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Green tea harvest (*shincha*), bonito fish (*katsuo*).</li>
+                    </ul>
+                    <p>After the chaos of Golden Week, May is a fantastic month to visit. The weather is glorious, the countryside is a vibrant green, and the crowds from cherry blossom season have thinned out.</p>
+                </section>
+
+                 <!-- June -->
+                <section id="june" class="pt-8">
+                    <h2 class="text-blue-600">June: Rainy Season</h2>
+                    <ul>
+                        <li><i data-lucide="cloud-rain"></i><strong>Weather:</strong> Warm, humid, and wet. The rainy season (*tsuyu*) begins.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Hydrangea flowers, rice planting in the countryside.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Cherries, plums (*ume*).</li>
+                    </ul>
+                    <p>June is often avoided due to the rain, but it's not a constant downpour. It's a great time to visit museums and indoor attractions. Hokkaido largely escapes the rainy season, making it a great destination this month.</p>
+                </section>
+                
+                 <!-- July -->
+                <section id="july" class="pt-8">
+                    <h2 class="text-blue-600">July: Summer Festivals</h2>
+                    <ul>
+                        <li><i data-lucide="sun-medium"></i><strong>Weather:</strong> Hot and very humid.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Gion Matsuri in Kyoto, Mt. Fuji climbing season opens, massive fireworks festivals.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Watermelon, shaved ice (*kakigori*), cold noodles (*somen*).</li>
+                    </ul>
+                    <p>Summer kicks off in earnest. It's hot, but the energy is incredible with major festivals and fireworks displays happening almost every weekend. A perfect time to head to the mountains or the coast to escape the heat.</p>
+                </section>
+                
+                 <!-- August -->
+                <section id="august" class="pt-8">
+                    <h2 class="text-blue-600">August: Obon and Fireworks</h2>
+                    <ul>
+                        <li><i data-lucide="sun-medium"></i><strong>Weather:</strong> The hottest and most humid month.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Obon holiday week, Awa Odori dance festival in Tokushima, more fireworks.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Corn, edamame, eel (*unagi*).</li>
+                    </ul>
+                    <p>August is peak summer. The Obon holiday sees many people returning to their hometowns, so transport can be busy. It's a great time for beach trips and enjoying the lively summer atmosphere.</p>
+                </section>
+                
+                 <!-- September -->
+                <section id="september" class="pt-8">
+                    <h2 class="text-orange-600">September: Typhoon Season</h2>
+                    <ul>
+                        <li><i data-lucide="wind"></i><strong>Weather:</strong> Still hot and humid, but cooling down. High chance of typhoons.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Moon viewing (*tsukimi*), sumo tournament in Tokyo.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Pears, grapes, sweet potatoes.</li>
+                    </ul>
+                    <p>September is a transitional month. The weather is still summer-like, but the risk of typhoons is at its highest, which can disrupt travel plans. It's a good time to be flexible with your itinerary.</p>
+                </section>
+
+                 <!-- October -->
+                <section id="october" class="pt-8">
+                    <h2 class="text-orange-600">October: Golden Autumn</h2>
+                    <ul>
+                        <li><i data-lucide="sun"></i><strong>Weather:</strong> Mild, clear, and comfortable. Similar to May.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Autumn foliage (*koyo*) begins in the north, Takayama Autumn Festival.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Chestnuts (*kuri*), persimmons (*kaki*), mushrooms.</li>
+                    </ul>
+                    <p>Many consider October the best month to visit Japan. The weather is perfect, the autumn colors are spectacular, and the summer humidity is gone. It's a popular time, so book ahead.</p>
+                </section>
+                
+                 <!-- November -->
+                <section id="november" class="pt-8">
+                    <h2 class="text-orange-600">November: Peak Fall Colors</h2>
+                    <ul>
+                        <li><i data-lucide="leaf"></i><strong>Weather:</strong> Cool and crisp.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Peak autumn foliage in Tokyo and Kyoto, Shichi-Go-San festival for children.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Ginkgo nuts, sweet potatoes, apples.</li>
+                    </ul>
+                    <p>This is the prime time to see the stunning red and gold leaves in central Japan. The weather is great for walking and hiking, and the scenery is breathtaking. A beautiful and popular month for travel.</p>
+                </section>
+                
+                 <!-- December -->
+                <section id="december" class="pt-8">
+                    <h2 class="text-indigo-600">December: Illuminations & End of Year</h2>
+                    <ul>
+                        <li><i data-lucide="thermometer-snowflake"></i><strong>Weather:</strong> Cold and dry. Snow begins to fall in the mountains.</li>
+                        <li><i data-lucide="party-popper"></i><strong>Highlights:</strong> Winter illuminations, Christmas markets (Western-style), end-of-year preparations.</li>
+                        <li><i data-lucide="utensils"></i><strong>Seasonal Food:</strong> Yuzu citrus, daikon radish, hot sake.</li>
+                    </ul>
+                    <p>Early December is a quiet and affordable time to visit. The main draw is the spectacular winter light displays that pop up in cities across the country. The last week of the year is very busy as the country prepares for New Year's.</p>
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Consistent with other pages) -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // --- Dynamic Month Highlighter ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentMonth = new Date().getMonth(); // 0 for January, 11 for December
+            const monthLinks = document.querySelectorAll('.month-link');
+            
+            monthLinks.forEach(link => {
+                if (parseInt(link.dataset.month) === currentMonth) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
