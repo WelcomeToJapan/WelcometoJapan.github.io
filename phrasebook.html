@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Japanese Phrasebook for Travelers</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter for a clean, modern font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
+    <!-- Lucide Icons for vector-based, customizable icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Custom class for the active filter button state */
         .filter-btn.active {
             @apply bg-red-600 text-white shadow-md;
         }
@@ -53,6 +54,9 @@
                 <button class="filter-btn px-4 py-2 font-semibold rounded-full bg-gray-200 hover:bg-red-500 hover:text-white transition-colors" data-filter="dining">Dining</button>
                 <button class="filter-btn px-4 py-2 font-semibold rounded-full bg-gray-200 hover:bg-red-500 hover:text-white transition-colors" data-filter="shopping">Shopping</button>
                 <button class="filter-btn px-4 py-2 font-semibold rounded-full bg-gray-200 hover:bg-red-500 hover:text-white transition-colors" data-filter="directions">Directions</button>
+                <!-- New filter buttons for new categories -->
+                <button class="filter-btn px-4 py-2 font-semibold rounded-full bg-gray-200 hover:bg-red-500 hover:text-white transition-colors" data-filter="health">Health & Emergency</button>
+                <button class="filter-btn px-4 py-2 font-semibold rounded-full bg-gray-200 hover:bg-red-500 hover:text-white transition-colors" data-filter="accommodation">Accommodation</button>
             </div>
         </div>
 
@@ -77,7 +81,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
                     <p class="text-lg text-gray-600">Good evening</p>
                     <p class="text-2xl font-bold my-1">こんばんは</p>
                     <div class="flex justify-between items-center">
@@ -93,7 +97,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
                     <p class="text-lg text-gray-600">Excuse me / Sorry</p>
                     <p class="text-2xl font-bold my-1">すみません</p>
                     <div class="flex justify-between items-center">
@@ -101,11 +105,28 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
                     <p class="text-lg text-gray-600">Do you speak English?</p>
                     <p class="text-2xl font-bold my-1">英語を話せますか？</p>
                     <div class="flex justify-between items-center">
                         <p class="text-lg text-red-600 font-semibold">Eigo o hanasemasu ka?</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <!-- New phrases for Greetings -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
+                    <p class="text-lg text-gray-600">Good night</p>
+                    <p class="text-2xl font-bold my-1">おやすみなさい</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Oyasuminasai</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="greetings">
+                    <p class="text-lg text-gray-600">Nice to meet you</p>
+                    <p class="text-2xl font-bold my-1">はじめまして</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Hajimemashite</p>
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
@@ -127,7 +148,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
                     <p class="text-lg text-gray-600">Do you have an English menu?</p>
                     <p class="text-2xl font-bold my-1">英語のメニューはありますか？</p>
                     <div class="flex justify-between items-center">
@@ -135,7 +156,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
                     <p class="text-lg text-gray-600">Water, please</p>
                     <p class="text-2xl font-bold my-1">お水を下さい</p>
                     <div class="flex justify-between items-center">
@@ -143,7 +164,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
                     <p class="text-lg text-gray-600">Thank you for the meal (before eating)</p>
                     <p class="text-2xl font-bold my-1">いただきます</p>
                     <div class="flex justify-between items-center">
@@ -159,9 +180,27 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
+                <!-- New phrases for Dining -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
+                    <p class="text-lg text-gray-600">I'm allergic to...</p>
+                    <p class="text-2xl font-bold my-1">〜アレルギーです</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">...arerugii desu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="dining">
+                    <p class="text-lg text-gray-600">I have a table for two</p>
+                    <p class="text-2xl font-bold my-1">二人です</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Futari desu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+
 
                 <!-- Shopping -->
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
                     <p class="text-lg text-gray-600">How much is this?</p>
                     <p class="text-2xl font-bold my-1">これはいくらですか？</p>
                     <div class="flex justify-between items-center">
@@ -169,7 +208,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
                     <p class="text-lg text-gray-600">I'll take this</p>
                     <p class="text-2xl font-bold my-1">これを下さい</p>
                     <div class="flex justify-between items-center">
@@ -177,7 +216,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
                     <p class="text-lg text-gray-600">Can I pay by credit card?</p>
                     <p class="text-2xl font-bold my-1">カードで払えますか？</p>
                     <div class="flex justify-between items-center">
@@ -185,7 +224,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
                     <p class="text-lg text-gray-600">I'm just looking</p>
                     <p class="text-2xl font-bold my-1">見ているだけです</p>
                     <div class="flex justify-between items-center">
@@ -193,11 +232,20 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
                     <p class="text-lg text-gray-600">Tax-free, please</p>
                     <p class="text-2xl font-bold my-1">免税でお願いします</p>
                     <div class="flex justify-between items-center">
                         <p class="text-lg text-red-600 font-semibold">Menzei de onegaishimasu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <!-- New phrase for Shopping -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="shopping">
+                    <p class="text-lg text-gray-600">Can I try this on?</p>
+                    <p class="text-2xl font-bold my-1">試着してもいいですか？</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Shichaku shite mo ii desu ka?</p>
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
@@ -219,7 +267,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
                     <p class="text-lg text-gray-600">I'm lost</p>
                     <p class="text-2xl font-bold my-1">道に迷っています</p>
                     <div class="flex justify-between items-center">
@@ -227,7 +275,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
                     <p class="text-lg text-gray-600">Go straight</p>
                     <p class="text-2xl font-bold my-1">まっすぐ行ってください</p>
                     <div class="flex justify-between items-center">
@@ -235,7 +283,7 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                 <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
                     <p class="text-lg text-gray-600">Right / Left</p>
                     <p class="text-2xl font-bold my-1">右 / 左</p>
                     <div class="flex justify-between items-center">
@@ -243,7 +291,75 @@
                         <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
                     </div>
                 </div>
-                
+                <!-- New phrase for Directions -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="directions">
+                    <p class="text-lg text-gray-600">Is it far?</p>
+                    <p class="text-2xl font-bold my-1">遠いですか？</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Tooi desu ka?</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+
+                <!-- Health & Emergency -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="health">
+                    <p class="text-lg text-gray-600">Help!</p>
+                    <p class="text-2xl font-bold my-1">助けて！</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Tasukete!</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="health">
+                    <p class="text-lg text-gray-600">I need a doctor</p>
+                    <p class="text-2xl font-bold my-1">医者が必要です</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Isha ga hitsuyou desu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="health">
+                    <p class="text-lg text-gray-600">Where is the hospital?</p>
+                    <p class="text-2xl font-bold my-1">病院はどこですか？</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Byouin wa doko desu ka?</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="health">
+                    <p class="text-lg text-gray-600">I'm not feeling well</p>
+                    <p class="text-2xl font-bold my-1">気分が悪いです</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Kibun ga warui desu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+
+                <!-- Accommodation -->
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="accommodation">
+                    <p class="text-lg text-gray-600">I have a reservation</p>
+                    <p class="text-2xl font-bold my-1">予約があります</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Yoyaku ga arimasu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="accommodation">
+                    <p class="text-lg text-gray-600">My name is...</p>
+                    <p class="text-2xl font-bold my-1">私の名前は...です</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Watashi no namae wa... desu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
+                <div class="phrase-item bg-white p-5 rounded-lg shadow-sm" data-category="accommodation">
+                    <p class="text-lg text-gray-600">The room key, please</p>
+                    <p class="text-2xl font-bold my-1">部屋の鍵をお願いします</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg text-red-600 font-semibold">Heya no kagi o onegaishimasu</p>
+                        <button class="copy-btn bg-gray-100 p-2 rounded-md hover:bg-gray-200" title="Copy Japanese Text"><i data-lucide="copy" class="w-5 h-5 text-gray-600"></i></button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -256,6 +372,7 @@
     </footer>
 
     <script>
+        // Initializes all Lucide icons on the page.
         lucide.createIcons();
 
         // --- Phrasebook Logic ---
@@ -264,16 +381,18 @@
             const phraseItems = document.querySelectorAll('.phrase-item');
             const copyButtons = document.querySelectorAll('.copy-btn');
 
-            // Filter functionality
+            /**
+             * Handles the filtering of phrase items based on the selected category.
+             */
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const filter = button.dataset.filter;
 
-                    // Update active button style
+                    // Update active button style to show which one is selected
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
 
-                    // Show/hide phrases
+                    // Show or hide phrases based on the filter
                     phraseItems.forEach(item => {
                         if (filter === 'all' || item.dataset.category === filter) {
                             item.style.display = 'block';
@@ -284,13 +403,16 @@
                 });
             });
 
-            // Copy to clipboard functionality
+            /**
+             * Handles the copy-to-clipboard functionality for each phrase.
+             */
             copyButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const phraseItem = button.closest('.phrase-item');
+                    // Get the Japanese text from the bolded paragraph element
                     const japaneseText = phraseItem.querySelector('.text-2xl').innerText;
                     
-                    // Create a temporary textarea to copy from
+                    // Use a temporary textarea to copy the text to the clipboard
                     const textArea = document.createElement('textarea');
                     textArea.value = japaneseText;
                     document.body.appendChild(textArea);
@@ -298,12 +420,14 @@
                     document.execCommand('copy');
                     document.body.removeChild(textArea);
 
-                    // Visual feedback
+                    // Provide visual feedback to the user
                     const icon = button.querySelector('i');
                     icon.setAttribute('data-lucide', 'check');
+                    // Re-create the icon to render the new one
                     lucide.createIcons();
                     button.title = "Copied!";
 
+                    // Revert the icon back to the copy icon after 1.5 seconds
                     setTimeout(() => {
                         icon.setAttribute('data-lucide', 'copy');
                         lucide.createIcons();
