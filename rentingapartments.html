@@ -26,18 +26,17 @@
         .prose h3 {
             @apply text-2xl font-semibold mt-8 mb-4;
         }
-        /*
-        * Updated the paragraph styles to use normal leading (1.5 line spacing)
-        * and a larger bottom margin (mb-12) to create a double line break effect.
-        */
         .prose p {
-            @apply text-lg text-gray-700 mt-4 mb-12 leading-normal;
+            @apply text-lg text-gray-700 leading-loose;
         }
         .prose ul {
             @apply list-disc list-inside mt-4 mb-6 pl-4 space-y-4 text-lg;
         }
         .prose strong {
             @apply font-semibold text-gray-900;
+        }
+        .bg-white p {
+            @apply leading-loose;
         }
     </style>
 </head>
@@ -62,63 +61,65 @@
         <!-- Main Content Area -->
         <section class="py-12 sm:py-16">
             <div class="container mx-auto px-6 max-w-4xl prose">
-                <p>Renting your first apartment in Japan can be one of the most challenging experiences for a new resident. The process is different from many other countries, with unique fees, strict requirements, and a lot of paperwork. But don't worry—it's a path many of us have walked. This guide will break down the entire process, from understanding the crazy initial costs to finally getting your keys.</p>
-
-                <h2>First, The Bad News: The Initial Costs</h2>
-                <p>The biggest shock for most foreigners is the massive upfront cost. You can expect to pay anywhere from <strong>4 to 6 times your monthly rent</strong> just to move in. Before we get to the process, let's demystify these fees, as you'll see them on every listing.</p>
-
-                <div class="bg-white p-6 rounded-lg shadow-sm space-y-4 not-prose text-lg">
-                    <p><strong>敷金 (Shikikin) - Security Deposit:</strong> Typically 1-2 months' rent. It's partially refundable and covers any damages beyond normal wear and tear.</p>
-                    <p><strong>礼金 (Reikin) - Key Money:</strong> Literally "gift money." A non-refundable gift of 1-2 months' rent to the landlord. A painful, but common, custom. It is important to note that you can find many places that do NOT require key money, especially further out of major metropolitan areas.</p>
-                    <p><strong>仲介手数料 (Chūkai Tesūryō) - Agency Fee:</strong> The fee for the real estate agent, usually 1 month's rent + tax.</p>
-                    <p><strong>保証会社 (Hoshō Gaisha) - Guarantor Company Fee:</strong> Since most foreigners don't have a personal guarantor, you must pay a company to guarantee your rent. This is often 50-100% of one month's rent, paid upfront.</p>
-                    <p><strong>鍵交換代 (Kagi Kōkan Dai) - Lock Change Fee:</strong> A mandatory fee (around ¥15,000-¥25,000) to change the locks.</p>
-                     <p><strong>火災保険 (Kasai Hoken) - Fire Insurance:</strong> Mandatory insurance, usually around ¥15,000-¥20,000 for a two-year contract.</p>
+                <div class="space-y-8">
+                    <p>Renting your first apartment in Japan can be one of the most challenging experiences for a new resident. The process is different from many other countries, with unique fees, strict requirements, and a lot of paperwork. But don't worry—it's a path many of us have walked. This guide will break down the entire process, from understanding the crazy initial costs to finally getting your keys.</p>
+    
+                    <h2>First, The Bad News: The Initial Costs</h2>
+                    <p>The biggest shock for most foreigners is the massive upfront cost. You can expect to pay anywhere from <strong>4 to 6 times your monthly rent</strong> just to move in. Before we get to the process, let's demystify these fees, as you'll see them on every listing.</p>
+    
+                    <div class="bg-white p-6 rounded-lg shadow-sm space-y-4 not-prose text-lg">
+                        <p><strong>敷金 (Shikikin) - Security Deposit:</strong> Typically 1-2 months' rent. It's partially refundable and covers any damages beyond normal wear and tear.</p>
+                        <p><strong>礼金 (Reikin) - Key Money:</strong> Literally "gift money." A non-refundable gift of 1-2 months' rent to the landlord. A painful, but common, custom. It is important to note that you can find many places that do NOT require key money, especially further out of major metropolitan areas.</p>
+                        <p><strong>仲介手数料 (Chūkai Tesūryō) - Agency Fee:</strong> The fee for the real estate agent, usually 1 month's rent + tax.</p>
+                        <p><strong>保証会社 (Hoshō Gaisha) - Guarantor Company Fee:</strong> Since most foreigners don't have a personal guarantor, you must pay a company to guarantee your rent. This is often 50-100% of one month's rent, paid upfront.</p>
+                        <p><strong>鍵交換代 (Kagi Kōkan Dai) - Lock Change Fee:</strong> A mandatory fee (around ¥15,000-¥25,000) to change the locks.</p>
+                         <p><strong>火災保険 (Kasai Hoken) - Fire Insurance:</strong> Mandatory insurance, usually around ¥15,000-¥20,000 for a two-year contract.</p>
+                    </div>
+                    <p class="mt-4"><strong>The takeaway:</strong> If you're looking at an apartment that costs ¥80,000 per month, you might even need to pay ¥320,000 to ¥480,000 just to sign the contract.</p>
+                    
+                    <img src="images/houses2.jpg" alt="Japanese residential street" class="rounded-lg shadow-lg w-full my-12">
+    
+                    <h2>The Step-by-Step Rental Process</h2>
+                    
+                    <h3>A Note on Company Apartments</h3>
+                    <p>If you are being sponsored and employed from overseas, your company may offer to arrange housing for you. These "company apartments" can be a convenient way to get set up quickly. However, be aware that they can often be smaller and more overpriced than what you might find on your own, especially for short-term contract work. This is because landlords and agencies sometimes add a premium for what they see as the extra 'risk' of short-term rentals to foreign residents.</p>
+    
+                    <h3>Step 1: Find a Foreigner-Friendly Real Estate Agent</h3>
+                    <p>Your first stop is a real estate agency (不動産屋, Fudōsan-ya). Don't just walk into any agency. Many smaller, local agencies are not equipped or willing to deal with foreigners. Search online for agencies in your target area that specifically advertise "foreigner-friendly" services. They will have English-speaking staff and experience with the specific challenges you'll face.</p>
+    
+                    <h3>Step 2: Search for Properties & Define Your Needs</h3>
+                    <p>Your agent will ask for your criteria. Be ready to tell them:</p>
+                    <ul>
+                        <li><strong>Budget:</strong> Your maximum monthly rent.</li>
+                        <li><strong>Location:</strong> Desired train line or station, and maximum walking distance from it.</li>
+                        <li><strong>Size/Layout:</strong> Apartment sizes are listed with terms like 1K (one room and a kitchen), 1DK (dining/kitchen area), or 2LDK (living, dining, kitchen, and two bedrooms).</li>
+                    </ul>
+                    <p>The agent will show you listings that match. Be prepared to be flexible—the perfect apartment might not exist, and some landlords will simply not rent to foreigners.</p>
+    
+                    <h3>Step 3: View Apartments (内見, Naiken)</h3>
+                    <p>Your agent will take you to see a few apartments. During the viewing, check for everything: water pressure, signs of mould, the direction the windows face (south-facing is best for light), and the location of power outlets. This is your chance to ask questions and get a feel for the neighborhood.</p>
+    
+                    <img src="images/houses3.jpg" alt="Entrance to a Japanese apartment" class="rounded-lg shadow-lg w-full my-12">
+    
+                    <h3>Step 4: The Application & Screening Process</h3>
+                    <p>Once you find a place you love, you'll start the application. You will need to provide:</p>
+                    <ul>
+                        <li>Your Residence Card (Zairyu Card)</li>
+                        <li>Proof of Employment and Income (a letter from your employer)</li>
+                        <li>A Japanese Phone Number</li>
+                        <li>Contact Information for an Emergency Contact</li>
+                    </ul>
+                    <p>This information goes to the landlord and the guarantor company for a background check, which can take several days to a week.</p>
+    
+                    <h3>Step 5: Signing the Contract & Paying the Fees</h3>
+                    <p>If you pass the screening, it's time to sign the contract. It will be a mountain of paperwork, entirely in Japanese. Your agent should walk you through the key points. This is when you will make the huge upfront payment via bank transfer. Do not be late with this payment.</p>
+    
+                    <h3>Step 6: Getting the Keys & Moving In</h3>
+                    <p>You'll receive your keys on the official start date of your lease. From there, you'll need to set up your utilities (gas, electricity, water, and internet) yourself. Your agent can usually provide you with the contact numbers for the local utility companies.</p>
+    
+                    <h2>It Gets Easier: A Final Thought</h2>
+                    <p>This all might seem daunting, but it's important to know that the longer you are in Japan and the more Japanese you learn, the easier and cheaper this process becomes. I've been through it all myself—renting alone as a newcomer, finding a place with my family, and eventually buying land and building my own house. Each step of the way, as my language skills improved and I became more integrated into society, the doors opened wider and the process became less intimidating. Your first rental is the hardest; it gets better from there.</p>
                 </div>
-                <p class="mt-4"><strong>The takeaway:</strong> If you're looking at an apartment that costs ¥80,000 per month, you might even need to pay ¥320,000 to ¥480,000 just to sign the contract.</p>
-                
-                <img src="images/houses2.jpg" alt="Japanese residential street" class="rounded-lg shadow-lg w-full my-12">
-
-                <h2>The Step-by-Step Rental Process</h2>
-                
-                <h3>A Note on Company Apartments</h3>
-                <p>If you are being sponsored and employed from overseas, your company may offer to arrange housing for you. These "company apartments" can be a convenient way to get set up quickly. However, be aware that they can often be smaller and more overpriced than what you might find on your own, especially for short-term contract work. This is because landlords and agencies sometimes add a premium for what they see as the extra 'risk' of short-term rentals to foreign residents.</p>
-
-                <h3>Step 1: Find a Foreigner-Friendly Real Estate Agent</h3>
-                <p>Your first stop is a real estate agency (不動産屋, Fudōsan-ya). Don't just walk into any agency. Many smaller, local agencies are not equipped or willing to deal with foreigners. Search online for agencies in your target area that specifically advertise "foreigner-friendly" services. They will have English-speaking staff and experience with the specific challenges you'll face.</p>
-
-                <h3>Step 2: Search for Properties & Define Your Needs</h3>
-                <p>Your agent will ask for your criteria. Be ready to tell them:</p>
-                <ul>
-                    <li><strong>Budget:</strong> Your maximum monthly rent.</li>
-                    <li><strong>Location:</strong> Desired train line or station, and maximum walking distance from it.</li>
-                    <li><strong>Size/Layout:</strong> Apartment sizes are listed with terms like 1K (one room and a kitchen), 1DK (dining/kitchen area), or 2LDK (living, dining, kitchen, and two bedrooms).</li>
-                </ul>
-                <p>The agent will show you listings that match. Be prepared to be flexible—the perfect apartment might not exist, and some landlords will simply not rent to foreigners.</p>
-
-                <h3>Step 3: View Apartments (内見, Naiken)</h3>
-                <p>Your agent will take you to see a few apartments. During the viewing, check for everything: water pressure, signs of mould, the direction the windows face (south-facing is best for light), and the location of power outlets. This is your chance to ask questions and get a feel for the neighborhood.</p>
-
-                <img src="images/houses3.jpg" alt="Entrance to a Japanese apartment" class="rounded-lg shadow-lg w-full my-12">
-
-                <h3>Step 4: The Application & Screening Process</h3>
-                <p>Once you find a place you love, you'll start the application. You will need to provide:</p>
-                <ul>
-                    <li>Your Residence Card (Zairyu Card)</li>
-                    <li>Proof of Employment and Income (a letter from your employer)</li>
-                    <li>A Japanese Phone Number</li>
-                    <li>Contact Information for an Emergency Contact</li>
-                </ul>
-                <p>This information goes to the landlord and the guarantor company for a background check, which can take several days to a week.</p>
-
-                <h3>Step 5: Signing the Contract & Paying the Fees</h3>
-                <p>If you pass the screening, it's time to sign the contract. It will be a mountain of paperwork, entirely in Japanese. Your agent should walk you through the key points. This is when you will make the huge upfront payment via bank transfer. Do not be late with this payment.</p>
-
-                <h3>Step 6: Getting the Keys & Moving In</h3>
-                <p>You'll receive your keys on the official start date of your lease. From there, you'll need to set up your utilities (gas, electricity, water, and internet) yourself. Your agent can usually provide you with the contact numbers for the local utility companies.</p>
-
-                <h2>It Gets Easier: A Final Thought</h2>
-                <p>This all might seem daunting, but it's important to know that the longer you are in Japan and the more Japanese you learn, the easier and cheaper this process becomes. I've been through it all myself—renting alone as a newcomer, finding a place with my family, and eventually buying land and building my own house. Each step of the way, as my language skills improved and I became more integrated into society, the doors opened wider and the process became less intimidating. Your first rental is the hardest; it gets better from there.</p>
             </div>
         </section>
     </main>
