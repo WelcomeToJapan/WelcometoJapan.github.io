@@ -26,11 +26,15 @@
         .prose h3 {
             @apply text-2xl font-semibold mt-8 mb-4;
         }
+        /*
+        * Updated the paragraph styles to use normal leading (1.5 line spacing)
+        * and a larger bottom margin (mb-12) to create a double line break effect.
+        */
         .prose p {
-            @apply text-lg text-gray-700 mb-6 leading-relaxed;
+            @apply text-lg text-gray-700 mt-4 mb-12 leading-normal;
         }
         .prose ul {
-            @apply list-disc list-inside mb-6 pl-4 space-y-2 text-lg;
+            @apply list-disc list-inside mt-4 mb-6 pl-4 space-y-4 text-lg;
         }
         .prose strong {
             @apply font-semibold text-gray-900;
