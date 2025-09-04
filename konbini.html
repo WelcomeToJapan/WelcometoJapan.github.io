@@ -13,9 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -39,16 +36,34 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold text-gray-900">Konbini Explorer</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition duration-300">About</a>
+                <a href="#big-three" class="text-gray-600 hover:text-gray-900 transition duration-300">The Big Three</a>
+                <a href="#must-tries" class="text-gray-600 hover:text-gray-900 transition duration-300">Must-Tries</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#big-three" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">The Big Three</a>
+            <a href="#must-tries" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Must-Tries</a>
+        </div>
+    </header>
 
     <main>
         <!-- Hero Section -->
         <section class="relative h-[40vh] min-h-[280px] flex items-center justify-center text-white text-center">
             <div class="absolute inset-0 bg-black opacity-50"></div>
-            <!-- Image Needed: A well-lit konbini at night -->
-            <img src="https://placehold.co/1600x500/cccccc/666666?text=Konbini+at+Night" 
-                 alt="The glowing sign of a Japanese convenience store at night" 
+            <img src="konbini1.jpg" 
+                 alt="The glowing sign of a Japanese convenience store at night, with neon lights reflecting on the street." 
                  class="w-full h-full object-cover">
             <div class="relative z-10 px-6">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg">Konbini: Japan's Omnipresent Convenience Stores</h1>
@@ -65,7 +80,7 @@
 
                     <h2>The Big Three: What to Know</h2>
                     <p>While there are many chains, the market is dominated by three giants. They might seem similar at first, but each has its own personality and is known for slightly different things.</p>
-    
+                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12 not-prose">
                         <!-- 7-Eleven -->
                         <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-500">
@@ -83,7 +98,7 @@
                             <p class="text-gray-600">Lawson stands out for its desserts, especially the Uchi Café Sweets line which often features premium roll cakes and puddings. They are also known for their "Kara-age Kun," bite-sized fried chicken nuggets that come in various flavors.</p>
                         </div>
                     </div>
-    
+                    
                     <h3>Other Chains You Might See</h3>
                     <p>While the big three are everywhere, keep an eye out for others. <strong>Ministop</strong> is unique because it has a small kitchen and seating area where they prepare fast food like soft-serve ice cream and hot dogs. <strong>Daily Yamazaki</strong> is run by the Yamazaki baking company, so they have an excellent selection of fresh bread and sandwiches. You may also hear older residents mention <strong>Circle K Sunkus</strong>, which was a major chain before it was completely absorbed by FamilyMart in 2018.</p>
 
@@ -94,14 +109,14 @@
                         <li><strong>Coffee Machine:</strong> To get coffee, you typically take a cup from the freezer section to the counter, pay for it, and then operate the machine yourself. It’s usually a simple one-button press.</li>
                         <li><strong>Paying:</strong> They accept cash, all major credit cards, and IC cards (like Suica or Pasmo).</li>
                     </ul>
-    
+                    
                     <h2>My Top 5 Konbini Must-Tries</h2>
                     <p>You could eat exclusively from konbini and still have an amazing culinary experience. If you're overwhelmed by the choice, here are a few items you absolutely have to try.</p>
                     <div class="space-y-8 mt-8">
                         <!-- Item 1: Onigiri -->
                         <div class="flex flex-col md:flex-row items-center gap-6">
-                             <!-- Image Needed: A variety of onigiri rice balls -->
-                            <img src="https://placehold.co/200x200/cccccc/666666?text=Onigiri" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0">
+                            <img src="onigiri.jpg" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0"
+                                 alt="A selection of different types of onigiri rice balls." >
                             <div>
                                 <h3 class="not-prose text-xl font-bold">Onigiri (おにぎり)</h3>
                                 <p class="not-prose text-gray-600">The perfect snack. These rice balls come with dozens of fillings. A classic choice is Tuna Mayo (ツナマヨ), but also try Salted Salmon (鮭) or Plum (梅).</p>
@@ -109,8 +124,8 @@
                         </div>
                         <!-- Item 2: Egg Salad Sandwich -->
                         <div class="flex flex-col md:flex-row items-center gap-6">
-                            <!-- Image Needed: A Japanese egg salad sandwich -->
-                            <img src="https://placehold.co/200x200/cccccc/666666?text=Egg+Sando" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0">
+                            <img src="eggsand.jpg" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0"
+                                 alt="A Japanese egg salad sandwich, known for its soft, fluffy bread and creamy filling." >
                             <div>
                                 <h3 class="not-prose text-xl font-bold">Tamago Sando (たまごサンド)</h3>
                                 <p class="not-prose text-gray-600">The famous Japanese egg salad sandwich. The bread is soft, and the filling is creamy and delicious. It's simple and good.</p>
@@ -118,8 +133,8 @@
                         </div>
                         <!-- Item 3: Fried Chicken -->
                         <div class="flex flex-col md:flex-row items-center gap-6">
-                            <!-- Image Needed: FamiChiki or other konbini fried chicken -->
-                            <img src="https://placehold.co/200x200/cccccc/666666?text=Fried+Chicken" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0">
+                            <img src="famichiki.jpg" class="w-48 h-48 object-cover rounded-lg shadow-md flex-shrink-0"
+                                 alt="Crispy, boneless FamiChiki, a popular type of fried chicken from FamilyMart." >
                             <div>
                                 <h3 class="not-prose text-xl font-bold">Konbini Fried Chicken</h3>
                                 <p class="not-prose text-gray-600">Each chain has its own version, and they're all amazing. FamilyMart's boneless FamiChiki is legendary, as is Lawson's Kara-age Kun. They are kept in a heated case right by the counter.</p>
@@ -137,34 +152,5 @@
             <p>&copy; 2024 Welcome to Japan. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Link to your shared JavaScript file -->
-    <script src="main.js"></script>
-    <script>
-        // JavaScript to load the header AND handle mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('header.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                    
-                    // Re-initialize Lucide icons after content is loaded
-                    lucide.createIcons();
-
-                    // Call the function from main.js to initialize the mobile menu
-                    initializeMobileMenu(); 
-
-                })
-                .catch(error => {
-                    console.error('There has been a problem with your fetch operation:', error);
-                });
-        });
-
-    </script>
 </body>
 </html>
