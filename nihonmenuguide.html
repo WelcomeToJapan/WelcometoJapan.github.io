@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Japanese Menu Guide</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Noto Sans JP -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF5;
+            color: #4A4A4A;
+        }
+        .active-filter {
+            background-color: #A37F64;
+            color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .filter-btn {
+            transition: all 0.2s ease-in-out;
+        }
+        .menu-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #EAEAEA;
+        }
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+        .dropdown-menu {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#4A4A4A] mb-2">日本のレストランメニューガイド</h1>
+            <p class="text-lg text-gray-600">A Guide to Common Japanese Restaurant Menus</p>
+        </header>
+
+        <div class="sticky top-0 bg-[#FDFBF5]/80 backdrop-blur-sm py-4 z-10 mb-8">
+            <div id="controls" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                 <input type="text" id="search-bar" placeholder="Search menu... (e.g., 'ramen')" class="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-[#A37F64] focus:outline-none transition">
+            </div>
+            <div id="filters" class="flex flex-wrap justify-center gap-2 mt-4">
+            </div>
+        </div>
+
+        <main id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        </main>
+    </div>
+    
+    <!-- Link to your shared JavaScript file -->
+    <script src="main.js"></script>
+    <script>
+        // JavaScript to load the header AND handle mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    
+                    // Re-initialize Lucide icons after content is loaded
+                    lucide.createIcons();
+
+                    // Call the function from main.js to initialize the mobile menu
+                    initializeMobileMenu(); 
+
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+
+        const menuData = [
+            { kanji: '枝豆', romaji: 'Edamame', description: 'Boiled and salted young soybeans in the pod.', category: 'Appetizer' },
+            { kanji: '冷奴', romaji: 'Hiyayakko', description: 'Chilled tofu served with toppings like green onions, ginger, and soy sauce.', category: 'Appetizer' },
+            { kanji: '唐揚げ', romaji: 'Karaage', description: 'Japanese-style seasoned and deep-fried chicken pieces.', category: 'Appetizer' },
+            { kanji: '餃子', romaji: 'Gyoza', description: 'Pan-fried dumplings, usually filled with pork and vegetables.', category: 'Appetizer' },
+            { kanji: 'たこ焼き', romaji: 'Takoyaki', description: 'Ball-shaped snacks made of a wheat flour-based batter and filled with diced octopus.', category: 'Appetizer' },
+            { kanji: '親子丼', romaji: 'Oyakodon', description: 'A rice bowl dish where chicken, egg, and onions are simmered together and served over rice.', category: 'Rice' },
+            { kanji: 'カツ丼', romaji: 'Katsudon', description: 'A rice bowl topped with a deep-fried pork cutlet, egg, and condiments.', category: 'Rice' },
+            { kanji: '牛丼', romaji: 'Gyudon', description: 'A rice bowl topped with thinly sliced beef and onion simmered in a sweet sauce.', category: 'Rice' },
+            { kanji: 'カレーライス', romaji: 'Karē Raisu', description: 'Japanese-style curry served over rice. Often includes vegetables and meat.', category: 'Rice' },
+            { kanji: 'おにぎり', romaji: 'Onigiri', description: 'Rice balls, often triangular or oval, sometimes with a filling and wrapped in nori (seaweed).', category: 'Rice' },
+            { kanji: 'ラーメン', romaji: 'Rāmen', description: 'Noodle soup with a rich broth, various toppings like sliced pork, nori, and scallions.', category: 'Noodles' },
+            { kanji: 'うどん', romaji: 'Udon', description: 'Thick wheat flour noodles, served hot in a savory broth or chilled with a dipping sauce.', category: 'Noodles' },
+            { kanji: 'そば', romaji: 'Soba', description: 'Thin noodles made from buckwheat flour, served hot or cold.', category: 'Noodles' },
+            { kanji: '焼きそば', romaji: 'Yakisoba', description: 'Stir-fried wheat noodles with pork, vegetables, and a sweet and savory sauce.', category: 'Noodles' },
+            { kanji: '握り寿司', romaji: 'Nigiri-zushi', description: 'A slice of raw or cooked seafood over a small mound of vinegared rice.', category: 'Sushi' },
+            { kanji: '巻き寿司', romaji: 'Maki-zushi', description: 'Sushi rolls made by wrapping rice and ingredients in nori (seaweed).', category: 'Sushi' },
+            { kanji: '刺身', romaji: 'Sashimi', description: 'Thinly sliced, high-quality raw fish or seafood, served without rice.', category: 'Sushi' },
+            { kanji: 'ちらし寿司', romaji: 'Chirashi-zushi', description: 'A bowl of sushi rice topped with a variety of scattered sashimi and garnishes.', category: 'Sushi' },
+            { kanji: '焼き鳥', romaji: 'Yakitori', description: 'Grilled skewers, most commonly made with chicken parts and seasoned with salt or sauce.', category: 'Grilled' },
+            { kanji: 'お好み焼き', romaji: 'Okonomiyaki', description: 'A savory pancake containing a variety of ingredients, topped with sauces and bonito flakes.', category: 'Grilled' },
+            { kanji: '生姜焼き', romaji: 'Shōgayaki', description: 'Pan-fried thin slices of pork seasoned with ginger, soy sauce, and mirin.', category: 'Grilled' },
+            { kanji: '天ぷら', romaji: 'Tenpura', description: 'Seafood and vegetables that have been lightly battered and deep-fried.', category: 'Fried' },
+            { kanji: 'とんかつ', romaji: 'Tonkatsu', description: 'A breaded, deep-fried pork cutlet, often served with a special sauce, rice, and shredded cabbage.', category: 'Fried' },
+            { kanji: 'すき焼き', romaji: 'Sukiyaki', description: 'A hot pot dish of thinly sliced beef, vegetables, and tofu simmered in a sweet soy-based broth.', category: 'Hot Pot' },
+            { kanji: 'しゃぶしゃぶ', romaji: 'Shabu-shabu', description: 'A hot pot where thin slices of meat and vegetables are cooked by swishing them in boiling broth.', category: 'Hot Pot' },
+            { kanji: '味噌汁', romaji: 'Miso Shiru', description: 'A traditional soup made from dashi stock and miso paste, often with tofu and seaweed.', category: 'Soup' },
+            { kanji: '日本酒', romaji: 'Nihonshu / Sake', description: 'Japanese rice wine, served either hot or cold.', category: 'Drinks' },
+            { kanji: 'ビール', romaji: 'Bīru', description: 'Beer. Japanese brands like Asahi, Kirin, and Sapporo are common.', category: 'Drinks' },
+            { kanji: 'お茶', romaji: 'Ocha', description: 'Green tea, the most common tea in Japan.', category: 'Drinks' },
+            { kanji: '焼酎', romaji: 'Shōchū', description: 'A Japanese distilled beverage, often made from rice, barley, or sweet potatoes.', category: 'Drinks' },
+            { kanji: '梅酒', romaji: 'Umeshu', description: 'A sweet and tangy liqueur made from steeping green plums in shōchū and sugar.', category: 'Drinks' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuGrid = document.getElementById('menu-grid');
+            const filtersContainer = document.getElementById('filters');
+            const searchBar = document.getElementById('search-bar');
+            let currentFilter = 'All';
+
+            const categories = ['All', ...new Set(menuData.map(item => item.category))];
+
+            function renderFilters() {
+                categories.forEach(category => {
+                    const button = document.createElement('button');
+                    button.textContent = category;
+                    button.classList.add('filter-btn', 'px-4', 'py-1', 'rounded-full', 'text-sm', 'font-medium', 'bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:bg-gray-100');
+                    if (category === 'All') {
+                        button.classList.add('active-filter');
+                    }
+                    button.dataset.category = category;
+                    filtersContainer.appendChild(button);
+                });
+            }
+
+            function renderMenu(items) {
+                menuGrid.innerHTML = '';
+                items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.classList.add('menu-card', 'bg-white', 'rounded-lg', 'p-5', 'shadow-sm');
+                    card.dataset.category = item.category;
+                    card.dataset.name = `${item.kanji} ${item.romaji} ${item.description}`.toLowerCase();
+                    
+                    card.innerHTML = `
+                        <h2 class="text-2xl font-bold text-[#A37F64]">${item.kanji}</h2>
+                        <p class="text-lg font-medium text-gray-800 mb-2">${item.romaji}</p>
+                        <p class="text-sm text-gray-600">${item.description}</p>
+                    `;
+                    menuGrid.appendChild(card);
+                });
+            }
+
+            function filterAndSearch() {
+                const searchTerm = searchBar.value.toLowerCase();
+                const cards = document.querySelectorAll('.menu-card');
+
+                cards.forEach(card => {
+                    const isCategoryMatch = currentFilter === 'All' || card.dataset.category === currentFilter;
+                    const isSearchMatch = card.dataset.name.includes(searchTerm);
+
+                    if (isCategoryMatch && isSearchMatch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            filtersContainer.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    currentFilter = e.target.dataset.category;
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active-filter'));
+                    e.target.classList.add('active-filter');
+                    filterAndSearch();
+                }
+            });
+
+            searchBar.addEventListener('keyup', filterAndSearch);
+
+            renderFilters();
+            renderMenu(menuData);
+        });
+    </script>
+</body>
+</html>
